@@ -1,0 +1,50 @@
+{
+	"lineWidth": 180,
+	"indentWidth": 4,
+	"newLineKind": "lf",
+	"useTabs": true,
+	"typescript": {
+	},
+	"json": {
+	},
+	"malva": {
+	},
+	"markup": {
+		"printWidth": 180,
+		"useTabs": true,
+		"indentWidth": 4,
+		"lineBreak": "lf",
+		"quotes": "double",
+		"formatComments": false,
+		"scriptIndent": true,
+		"styleIndent": true,
+		"closingBracketSameLine": false,
+		"closingTagLineBreakForEmpty": "fit",
+		"maxAttrsPerLine": null,
+		"preferAttrsSingleLine": false,
+		"html.normal.selfClosing": false,
+		"html.void.selfClosing": true,
+		"component.selfClosing": true,
+		"svg.selfClosing": true,
+		"mathml.selfClosing": false,
+		"whitespaceSensitivity": "css",
+		"component.whitespaceSensitivity": "css",
+		"doctypeKeywordCase": "upper",
+		"vBindStyle": "short",
+		"vOnStyle": "short",
+		"vForDelimiterStyle": "of",
+		"vSlotStyle": "short",
+		"vBindSameNameShortHand": false,
+		"astroAttrShorthand": true
+	},
+	"excludes": [
+		"**/node_modules",
+		"**/*-lock.json"
+	],
+	"plugins": [
+		"https://plugins.dprint.dev/typescript-0.91.4.wasm",
+		"https://plugins.dprint.dev/json-0.19.3.wasm",
+		"https://plugins.dprint.dev/g-plane/malva-v0.5.1.wasm",
+		"https://plugins.dprint.dev/g-plane/markup_fmt-v0.11.0.wasm"
+	]
+}
