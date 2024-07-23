@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+	</head>
+
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+		<form action="#" method="get" id="race">
+			<section>
+				<header>
+					<h2>Race</h2>
+				</header>
+				<fieldset>
+					<legend>Race</legend>
+					<!-- TODO: add race list -->
+				</fieldset>
+				<fieldset>
+					<legend>Racial traits</legend>
+					<!-- TODO: fill with traits dynamically -->
+				</fieldset>
+				<footer>
+					<button type="reset" class="reset-button">Clear fields</button>
+					<button type="submit" class="next-button">Next</button>
+				</footer>
+			</section>
+		</form>
+		<form action="#" method="get" id="class">
+			<section>
+				<header>
+					<h2>Class</h2>
+				</header>
+				<fieldset>
+					<legend>Character level and HP</legend>
+
+					<label for="level">Character level</label>
+					<input
+						type="number"
+						min="1"
+						max="20"
+						step="1"
+						name="level"
+						id="level"
+					/>
+
+					<label for="max-hp">Max HP</label>
+					<output
+						name="max-hp"
+						id="max-hp"
+						aria-live="off"
+					></output>
+
+					<label for="hit-die">Hit die</label>
+					<output
+						name="hit-die"
+						id="hit-die"
+						aria-live="off"
+					>
+					</output>
+				</fieldset>
+				<fieldset>
+					<legend>Class</legend>
+					<!-- TODO: add class list -->
+				</fieldset>
+				<fieldset>
+					<legend>Class features</legend>
+					<!-- TODO: fill in with class features dynamically -->
+				</fieldset>
+				<footer>
+					<button type="submit" class="prev-button">Previous</button>
+					<button type="reset" class="reset-button">Clear fields</button>
+					<button type="submit" class="next-button">Next</button>
+				</footer>
+			</section>
+		</form>
+		<form action="#" method="get" id="abilities">
+			<section>
+				<header>
+					<h2>Abilities</h2>
+				</header>
+				<fieldset>
+					<legend>Ability scores</legend>
+					<label for="str">Strength</label>
+					<select
+						name="str"
+						id="str"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-str">Total:</label>
+					<output
+						name="base-str"
+						id="base-str"
+						for="str"
+						aria-live="off"
+					>0</output>
+
+					<label for="dex">Dexterity</label>
+					<select
+						name="dex"
+						id="dex"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-dex">Total:</label>
+					<output
+						name="base-dex"
+						id="base-dex"
+						for="dex"
+						aria-live="off"
+					>0</output>
+
+					<label for="con">Constitution</label>
+					<select
+						name="con"
+						id="con"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-con">Total:</label>
+					<output
+						name="base-con"
+						id="base-con"
+						for="con"
+						aria-live="off"
+					>0</output>
+
+					<label for="int">Inteligence</label>
+					<select
+						name="int"
+						id="int"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-int">Total:</label>
+					<output
+						name="base-int"
+						id="base-int"
+						for="int"
+						aria-live="off"
+					>0</output>
+
+					<label for="wis">Wisdom</label>
+					<select
+						name="wis"
+						id="wis"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-wis">Total:</label>
+					<output
+						name="base-wis"
+						id="base-wis"
+						for="wis"
+						aria-live="off"
+					>0</output>
+
+					<label for="cha">Charisma</label>
+					<select
+						name="cha"
+						id="cha"
+						class="ability-select"
+						required
+					>
+						<option value="" selected>Not selected</option>
+						<option value="8">8</option>
+						<option value="10">10</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+					</select>
+					<label for="base-cha">Total:</label>
+					<output
+						name="base-cha"
+						id="base-cha"
+						for="cha"
+						aria-live="off"
+					>0</output>
+				</fieldset>
+				<fieldset>
+					<legend>Score calculations</legend>
+
+					<details>
+						<summary>
+							Strength total: <output
+								for="base2-str racial-str asi-str"
+								name="total-str"
+								id="total-str"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-str racial-str asi-str"
+								name="str-mod"
+								id="str-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-str">Base score</label>
+						<output
+							for="str"
+							name="base2-str"
+							id="base2-str"
+							aria-live="off"
+						>0</output>
+
+						<label for="racial-str">Racial bonus</label>
+						<output
+							for="str race"
+							name="racial-str"
+							id="racial-str"
+							aria-live="off"
+						>0</output>
+						<label for="asi-str">Ability improvements</label>
+						<output
+							for="str race"
+							name="asi-str"
+							id="asi-str"
+							aria-live="off"
+						>0</output>
+					</details>
+
+					<details>
+						<summary>
+							Dexterity total: <output
+								for="base2-dex racial-dex asi-dex"
+								name="total-dex"
+								id="total-dex"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-dex racial-dex asi-dex"
+								name="dex-mod"
+								id="dex-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-dex">Base score</label>
+						<output
+							for="dex"
+							name="base2-dex"
+							id="base2-dex"
+							aria-live="off"
+						>0</output>
+						<label for="racial-dex">Racial bonus</label>
+						<output
+							for="dex race"
+							name="racial-dex"
+							id="racial-dex"
+							aria-live="off"
+						>0</output>
+						<label for="asi-dex">Ability improvements</label>
+						<output
+							for="dex race"
+							name="asi-dex"
+							id="asi-dex"
+							aria-live="off"
+						>0</output>
+					</details>
+
+					<details>
+						<summary>
+							Constitution total: <output
+								for="base2-con racial-con asi-con"
+								name="total-con"
+								id="total-con"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-con racial-con asi-con"
+								name="con-mod"
+								id="con-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-con">Base score</label>
+						<output
+							for="con"
+							name="base2-con"
+							id="base2-con"
+							aria-live="off"
+						>0</output>
+						<label for="racial-con">Racial bonus</label>
+						<output
+							for="con race"
+							name="racial-con"
+							id="racial-con"
+							aria-live="off"
+						>0</output>
+						<label for="asi-con">Ability improvements</label>
+						<output
+							for="con race"
+							name="asi-con"
+							id="asi-con"
+							aria-live="off"
+						>0</output>
+					</details>
+
+					<details>
+						<summary>
+							Inteligence total: <output
+								for="base2-int racial-int asi-int"
+								name="total-int"
+								id="total-int"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-int racial-int asi-int"
+								name="int-mod"
+								id="int-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-int">Base score</label>
+						<output
+							for="int"
+							name="base2-int"
+							id="base2-int"
+							aria-live="off"
+						>0</output>
+						<label for="racial-int">Racial bonus</label>
+						<output
+							for="int race"
+							name="racial-int"
+							id="racial-int"
+							aria-live="off"
+						>0</output>
+						<label for="asi-int">Ability improvements</label>
+						<output
+							for="int race"
+							name="asi-int"
+							id="asi-int"
+							aria-live="off"
+						>0</output>
+					</details>
+					<details>
+						<summary>
+							Wisdom total:
+							<output
+								for="base2-wis racial-wis asi-wis"
+								name="total-wis"
+								id="total-wis"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-wis racial-wis asi-wis"
+								name="wis-mod"
+								id="wis-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-wis">Base score</label>
+						<output
+							for="wis"
+							name="base2-wis"
+							id="base2-wis"
+							aria-live="off"
+						>0</output>
+						<label for="racial-wis">Racial bonus</label>
+						<output
+							for="wis race"
+							name="racial-wis"
+							id="racial-wis"
+							aria-live="off"
+						>0</output>
+						<label for="asi-wis">Ability improvements</label>
+						<output
+							for="wis race"
+							name="asi-wis"
+							id="asi-wis"
+							aria-live="off"
+						>0</output>
+					</details>
+					<details>
+						<summary>
+							Charisma total: <output
+								for="base2-cha racial-cha asi-cha"
+								name="total-cha"
+								id="total-cha"
+								aria-live="off"
+							>0</output> / <output
+								for="base2-cha racial-cha asi-cha"
+								name="cha-mod"
+								id="cha-mod"
+								aria-live="off"
+							>0</output>
+						</summary>
+
+						<label for="base2-cha">Base score</label>
+						<output
+							for="cha"
+							name="base2-cha"
+							id="base2-cha"
+							aria-live="off"
+						>0</output>
+						<label for="racial-cha">Racial bonus</label>
+						<output
+							for="cha race"
+							name="racial-cha"
+							id="racial-cha"
+							aria-live="off"
+						>0</output>
+						<label for="asi-cha">Ability improvements</label>
+						<output
+							for="cha race"
+							name="asi-cha"
+							id="asi-cha"
+							aria-live="off"
+						>0</output>
+					</details>
+				</fieldset>
+				<footer>
+					<button type="submit" class="prev-button">Previous</button>
+					<button type="reset" class="reset-button">Clear fields</button>
+					<button type="submit" class="next-button">Next</button>
+				</footer>
+			</section>
+		</form>
+		<form action="#" method="get" id="description">
+			<section>
+				<header>
+					<h2>Description</h2>
+				</header>
+				<fieldset>
+					<legend>Select Background</legend>
+					<!-- TODO: add backgrounds -->
+					<details>
+						<summary>
+							<input type="radio" name="background" id="background" value="background" />
+							<label for="background">Background</label>
+							<p>
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci aperiam molestiae suscipit dolorem iusto. Quod tempora ullam odit, inventore,
+								sint veniam assumenda deleniti eaque hic consequuntur sunt explicabo sequi perspiciatis.
+							</p>
+						</summary>
+					</details>
+				</fieldset>
+				<footer>
+					<button type="submit" class="prev-button">Previous</button>
+					<button type="reset" class="reset-button">Clear fields</button>
+					<button type="submit" class="next-button">Next</button>
+				</footer>
+			</section>
+		</form>
+		<form action="#" method="get" id="equipment">
+			<section>
+				<header>
+					<h2>Equipment</h2>
+				</header>
+				<footer>
+					<button type="submit" class="prev-button">Previous</button>
+					<button type="reset" class="reset-button">Clear fields</button>
+					<button type="submit" class="next-button">Next</button>
+				</footer>
+			</section>
+		</form>
+	</body>
+</html>
