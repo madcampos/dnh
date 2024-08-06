@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+
+		<dialog open id="abilities">
+			<form action="./description.html" method="post">
+				<article>
+					<header>
+						<h2>Abilities</h2>
+						<div>
+							<label for="form-progress3">Progress:</label> <progress id="form-progress3" max="6" value="3" aria-label="3 of 6">3 of 6</progress>
+						</div>
+					</header>
+					<fieldset>
+						<legend>Ability scores</legend>
+
+						<!-- Value suggestions -->
+						<datalist id="attribute-values">
+							<option value="8">8</option>
+							<option value="10">10</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+						</datalist>
+
+						<div>
+							<p>
+								<label for="str">Strength</label>
+								<input
+									name="str"
+									id="str"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-str">Total:</label>
+								<output
+									name="base-str"
+									id="base-str"
+									for="str"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+
+						<div>
+							<p>
+								<label for="dex">Dexterity</label>
+								<input
+									name="dex"
+									id="dex"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-dex">Total:</label>
+								<output
+									name="base-dex"
+									id="base-dex"
+									for="dex"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+
+						<div>
+							<p>
+								<label for="con">Constitution</label>
+								<input
+									name="con"
+									id="con"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-con">Total:</label>
+								<output
+									name="base-con"
+									id="base-con"
+									for="con"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+
+						<div>
+							<p>
+								<label for="int">Inteligence</label>
+								<input
+									name="int"
+									id="int"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-int">Total:</label>
+								<output
+									name="base-int"
+									id="base-int"
+									for="int"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+
+						<div>
+							<p>
+								<label for="wis">Wisdom</label>
+								<input
+									name="wis"
+									id="wis"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-wis">Total:</label>
+								<output
+									name="base-wis"
+									id="base-wis"
+									for="wis"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+
+						<div>
+							<p>
+								<label for="cha">Charisma</label>
+								<input
+									name="cha"
+									id="cha"
+									class="ability-select"
+									required
+									type="number"
+									min="8"
+									max="15"
+									list="attribute-values"
+								/>
+							</p>
+							<p>
+								<label for="base-cha">Total:</label>
+								<output
+									name="base-cha"
+									id="base-cha"
+									for="cha"
+									aria-live="off"
+								>0</output>
+							</p>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Skills</legend>
+						<p>
+							<output
+								name="skill-acrobatics"
+								id="skill-acrobatics"
+								for="dex"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Acrobatics</span>
+							<abbr title="Dexterity" aria-label="Base attribute">(Dex)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-animal-handling"
+								id="skill-animal-handling"
+								for="wis"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Animal Handling</span>
+							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-arcana"
+								id="skill-arcana"
+								for="int"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Arcana</span>
+							<abbr title="Inteligence" aria-label="Base attribute">(Int)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-athletics"
+								id="skill-athletics"
+								for="str"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Athletics</span>
+							<abbr title="Strength" aria-label="Base attribute">(Str)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-deception"
+								id="skill-deception"
+								for="cha"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Deception</span>
+							<abbr title="Charisma" aria-label="Base attribute">(Cha)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-history"
+								id="skill-history"
+								for="int"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>History</span>
+							<abbr title="Inteligence" aria-label="Base attribute">(Int)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-insight"
+								id="skill-insight"
+								for="wis"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Insight</span>
+							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-intimidation"
+								id="skill-intimidation"
+								for="cha"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Intimidation</span>
+							<abbr title="Charisma" aria-label="Base attribute">(Cha)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-investigation"
+								id="skill-investigation"
+								for="int"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Investigation</span>
+							<abbr title="Inteligence" aria-label="Base attribute">(Int)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-medicine"
+								id="skill-medicine"
+								for="wis"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Medicine</span>
+							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-nature"
+								id="skill-nature"
+								for="int"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Nature</span>
+							<abbr title="Inteligence" aria-label="Base attribute">(Int)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-perception"
+								id="skill-perception"
+								for="wis"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Perception</span>
+							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-performance"
+								id="skill-performance"
+								for="cha"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Performance</span>
+							<abbr title="Charisma" aria-label="Base attribute">(Cha)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-persuasion"
+								id="skill-persuasion"
+								for="cha"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Persuasion</span>
+							<abbr title="Charisma" aria-label="Base attribute">(Cha)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-religion"
+								id="skill-religion"
+								for="int"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Religion</span>
+							<abbr title="Inteligence" aria-label="Base attribute">(Int)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-slight-of-hand"
+								id="skill-slight-of-hand"
+								for="dex"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Slight of Hand</span>
+							<abbr title="Dexterity" aria-label="Base attribute">(Dex)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-stealth"
+								id="skill-stealth"
+								for="dex"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Stealth</span>
+							<abbr title="Dexterity" aria-label="Base attribute">(Dex)</abbr>
+						</p>
+						<p>
+							<output
+								name="skill-survival"
+								id="skill-survival"
+								for="wis"
+								aria-live="off"
+								aria-label="Skill modifier"
+							></output>
+							<span>Survival</span>
+							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
+						</p>
+					</fieldset>
+					<footer>
+						<nav aria-label="Form Actions">
+							<button type="submit" class="prev-button" formaction="./class.html" data-target="class">Previous</button>
+							<button type="reset" class="reset-button">Clear fields</button>
+							<button type="submit" class="next-button" data-target="description">Next</button>
+						</nav>
+					</footer>
+				</article>
+			</form>
+		</dialog>
+	</body>
+</html>

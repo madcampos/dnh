@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+
+		<dialog open id="summary">
+			<form action="#" method="post">
+				<article>
+					<header>
+						<h2>Summary</h2>
+					</header>
+					<!-- TODO: output everything -->
+					<!-- TODO: add used hit dice, current hp, and temp hp as range sliders -->
+					<!-- TODO: add death saves -->
+					<!-- TODO: add saving throws, AC, initiative, speed, passive perception, inspiration, proficiency bonus -->
+					<!-- TODO: add spell dc, ability, attack bonus, spell slots (as range slider) -->
+					<footer>
+						<nav aria-label="Summary Actions">
+							<button type="submit" class="prev-button" formaction="./spells.html" data-target="spells">Previous</button>
+							<button type="submit" class="next-button" data-target="export">Export character</button>
+						</nav>
+					</footer>
+				</article>
+			</form>
+		</dialog>
+	</body>
+</html>

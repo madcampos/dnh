@@ -1,0 +1,70 @@
+:root {
+	color-scheme: dark light;
+	font-family: system-ui, sans-serif;
+	font-size: 20px;
+}
+
+:where(*, *::after, *::before) {
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+dialog {
+	border: medium solid currentColor;
+	border-radius: 0.5rem;
+	margin: 1rem;
+	padding: 1rem;
+	position: relative;
+	width: calc(100% - 2rem);
+}
+
+button { font-size: inherit; }
+
+fieldset {
+	border: solid medium currentColor;
+	border-radius: 0.5rem;
+	margin-block: 1rem;
+}
+
+details { margin-block: 1rem; }
+summary {
+	border: solid currentColor medium;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem;
+}
+
+header div { text-align: center; }
+
+#race {
+	#race-list {
+		columns: 3;
+
+		& *:nth-child(2) { margin-block-start: 0; }
+		& *:last-child { margin-block-end: 0; }
+	}
+
+	.race-details { display: none; }
+
+	#race-details-none { text-align: center; }
+
+	/* dprint-ignore */
+	&:not(:has( input:checked)) #race-details-none { display: block; }
+	&:has(#race-dragonborn:checked) #race-details-dragonborn { display: block; }
+	&:has(#race-dwarf:checked) #race-details-dwarf { display: block; }
+	&:has(#race-elf:checked) #race-details-elf { display: block; }
+	&:has(#race-gnome:checked) #race-details-gnome { display: block; }
+	&:has(#race-half-elf:checked) #race-details-half-elf { display: block; }
+	&:has(#race-half-orc:checked) #race-details-half-orc { display: block; }
+	&:has(#race-halfling:checked) #race-details-halfling { display: block; }
+	&:has(#race-human:checked) #race-details-human { display: block; }
+	&:has(#race-tiefling:checked) #race-details-tiefling { display: block; }
+
+	/* dprint-ignore */
+	details:has( :invalid) summary {
+		border-color: red;
+		color: red;
+		font-weight: bold;
+
+		&::after { content: ' (Needs attention ⚠️)'; }
+	}
+}

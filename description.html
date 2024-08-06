@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+
+		<dialog open id="description">
+			<form action="./equipment.html" method="post">
+				<article>
+					<header>
+						<h2>Description</h2>
+						<div>
+							<label for="form-progress4">Progress:</label> <progress id="form-progress4" max="6" value="4" aria-label="4 of 6">4 of 6</progress>
+						</div>
+					</header>
+					<fieldset>
+						<legend>Details</legend>
+
+						<p>
+							<label for="">Character name</label> <input type="text" id="name" name="name" required />
+						</p>
+
+						<p>
+							<label for="">Player name</label> <input type="text" id="player-name" name="player-name" required />
+						</p>
+
+						<hr />
+
+						<p>
+							<label for="alignment">Alignment</label>
+							<select name="alignment" id="alignment" required>
+								<optgroup label="Good">
+									<option value="lawful-good">Lawful Good</option>
+									<option value="neutral-good">Neutral Good</option>
+									<option value="chaotic-good">Chaotic Good</option>
+								</optgroup>
+								<optgroup label="Neutral">
+									<option value="lawful-neutral">Lawful Neutral</option>
+									<option value="neutral-neutral" selected>True Neutral</option>
+									<option value="chaotic-neutral">Chaotic Neutral</option>
+								</optgroup>
+								<optgroup label="Evil">
+									<option value="lawful-evil">Lawful Evil</option>
+									<option value="neutral-evil">True Evil</option>
+									<option value="chaotic-evil">Chaotic Evil</option>
+								</optgroup>
+							</select>
+						</p>
+
+						<p>
+							<label for="deity">Deity</label>
+							<input type="text" id="deity" name="deity" list="deity-list" />
+							<datalist id="deity-list">
+								<option>Arawai</option>
+								<option>Aureon</option>
+								<option>Auril</option>
+								<option>Azuth</option>
+								<option>Bahamut</option>
+								<option>Balinor</option>
+								<option>Bane</option>
+								<option>Beory</option>
+								<option>Beshaba</option>
+								<option>Bhaal</option>
+								<option>Blibdoolpoolp</option>
+								<option>Boccob</option>
+								<option>Boldrei</option>
+								<option>Celestian</option>
+								<option>Chauntea</option>
+								<option>Corellon Larethian</option>
+								<option>Cults of the Dragon Below</option>
+								<option>Cyric</option>
+								<option>Deep Sashelas</option>
+								<option>Deneir</option>
+								<option>Dol Arrah</option>
+								<option>Dol Dorn</option>
+								<option>Eadro</option>
+								<option>Ehlonna</option>
+								<option>Eldath</option>
+								<option>Erythnul</option>
+								<option>Fharlanghn</option>
+								<option>Garl Glittergold</option>
+								<option>Gond</option>
+								<option>Grolantor</option>
+								<option>Gruumsh</option>
+								<option>Heironeous</option>
+								<option>Helm</option>
+								<option>Hextor</option>
+								<option>Hruggek</option>
+								<option>Ilmater</option>
+								<option>Incabulos</option>
+								<option>Istus</option>
+								<option>Iuz</option>
+								<option>Kelemvor</option>
+								<option>Kol Korran</option>
+								<option>Kord</option>
+								<option>Kutrulmak</option>
+								<option>Laogzed</option>
+								<option>Lathander</option>
+								<option>Leira</option>
+								<option>Lliira</option>
+								<option>Lolth</option>
+								<option>Loviatar</option>
+								<option>Maglubiyet</option>
+								<option>Malar</option>
+								<option>Mask</option>
+								<option>Mielikki</option>
+								<option>Milil</option>
+								<option>Moradin</option>
+								<option>Myrkul</option>
+								<option>Mystra</option>
+								<option>Nerull</option>
+								<option>Obad-Hai</option>
+								<option>Oghma</option>
+								<option>Olidammara</option>
+								<option>Ollandra</option>
+								<option>Onatar</option>
+								<option>Pelor</option>
+								<option>Pholtus</option>
+								<option>Ralishaz</option>
+								<option>Rao</option>
+								<option>Rilifane Rallathil</option>
+								<option>Savras</option>
+								<option>Sehanine Moonbow</option>
+								<option>Sekolah</option>
+								<option>Selûne</option>
+								<option>Semuanya</option>
+								<option>Shar</option>
+								<option>Silvanus</option>
+								<option>Skerrit</option>
+								<option>Skoraeus Stonebones</option>
+								<option>St. Cuthbert</option>
+								<option>Sune</option>
+								<option>Surtur</option>
+								<option>Talona</option>
+								<option>Talos</option>
+								<option>Tempus</option>
+								<option>Tharizdun</option>
+								<option>The Blood of Vol</option>
+								<option>The Devourer</option>
+								<option>The Fury</option>
+								<option>The Keeper</option>
+								<option>The Mockery</option>
+								<option>The Path of Light</option>
+								<option>The Shadow</option>
+								<option>The Silver Flame</option>
+								<option>The Spirits of the Past</option>
+								<option>The Traveler</option>
+								<option>The Undying Court</option>
+								<option>Thrym</option>
+								<option>Tiamat</option>
+								<option>Torm</option>
+								<option>Trithereon</option>
+								<option>Tymora</option>
+								<option>Tyr</option>
+								<option>Ulaa</option>
+								<option>Umberlee</option>
+								<option>Vecna</option>
+								<option>Waukeen</option>
+								<option>Wee Jas</option>
+								<option>Yondalla</option>
+							</datalist>
+						</p>
+					</fieldset>
+					<fieldset>
+						<legend>Picture</legend>
+						<input type="file" aria-label="Character Picture" accept="image/*" />
+					</fieldset>
+					<fieldset>
+						<legend>Physical characteristics</legend>
+
+						<p>
+							<label for="hair">Hair</label>
+							<input type="text" id="hair" name="hair" list="hair-list" />
+							<datalist id="hair-list">
+								<option>Black and Gorgeous Afro</option>
+								<option>Blue and orange Mohawk</option>
+								<option>Green buzzcut</option>
+								<option>Bald and shiny</option>
+								<option>Long and gray</option>
+								<option>Ginger braids with colorful beads</option>
+								<option>Brown ponytail</option>
+							</datalist>
+						</p>
+
+						<p>
+							<label for="skin">Skin</label> <input type="text" id="skin" name="skin" />
+						</p>
+
+						<p>
+							<label for="eyes">Eyes</label>
+							<input
+								type="color"
+								id="eyes"
+								name="eyes"
+								list="eye-colors"
+							/>
+							<datalist id="eye-colors">
+								<option value="#ff0000">Red</option>
+								<option value="#2e8b57">Green</option>
+								<option value="#8b4513">Brown</option>
+								<option value="#000000">Black</option>
+								<option value="#ffffff">Black</option>
+								<option value="#808080">Grey</option>
+								<option value="#4169e1">Blue</option>
+								<option value="#dda0dd">Violet</option>
+								<option value="#ffd700">Yellow</option>
+							</datalist>
+						</p>
+
+						<p>
+							<label for="height">Height (ft)</label> <input type="number" step="0.1" id="height" name="height" min="0" />
+						</p>
+
+						<p>
+							<label for="weight">Weight (lbs)</label> <input type="number" step="0.1" id="weight" name="weight" min="0" />
+						</p>
+
+						<p>
+							<label for="age">Age</label> <input type="number" id="age" name="age" min="18" max="100" />
+						</p>
+
+						<p>
+							<label for="pronouns">Pronouns</label>
+							<input
+								type="text"
+								id="pronouns"
+								name="pronouns"
+								list="pronoun-suggestions"
+							/>
+							<datalist id="pronoun-suggestions">
+								<option>They/them</option>
+								<option>She/her</option>
+								<option>He/his</option>
+							</datalist>
+						</p>
+					</fieldset>
+					<fieldset>
+						<legend>Select Background</legend>
+						<dl>
+							<dt>
+								<input type="radio" name="background" id="background-acolyte" value="acolyte" /> <label for="background-acolyte">Acolyte</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of
+										the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the
+										divine. You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power.
+									</p>
+									<p>
+										Choose a god, a pantheon of gods, or some other quasi-divine being, and work with your DM to detail the nature of your religious service.
+										The Gods of the Multiverse section contains a sample pantheon, from the Forgotten Realms setting. Were you a lesser functionary in a temple,
+										raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god
+										in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that
+										served a fiendish master that you now deny.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Shelter of the Faithful</em></summary>
+									<p>
+										As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and
+										your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith,
+										though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest
+										lifestyle.
+									</p>
+
+									<p>
+										You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the
+										temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple,
+										you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your
+										temple.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-criminal" value="criminal" /> <label for="background-criminal">Criminal / Spy</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have
+										contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the
+										underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Criminal Contact</em></summary>
+
+									<p>
+										You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and
+										from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who
+										can deliver messages for you.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-folk-hero" value="folk-hero" /> <label for="background-folk-hero">Folk Hero</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You come from a humble social rank, but you are destined for so much more. Already the people of your home village regard you as their
+										champion, and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Rustic Hospitality</em></summary>
+									<p>
+										Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among
+										other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you,
+										though they will not risk their lives for you.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-haunted-one" value="haunted-one" /> <label for="background-haunted-one">Haunted One</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You are haunted by something so terrible that you dare not speak of it. You’ve tried to bury it and run away from it, to no avail. Whatever
+										this thing is that haunts you can’t be slain with a sword or banished with a spell. It might come to you as a shadow on the wall, a
+										bloodcurdling nightmare, a memory that refuses to die, or a demonic whisper in the dark. The burden has taken its toll, isolating you from
+										most people and making you question your sanity. You must find a way to overcome it before it destroys you.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Heart of Darkness</em></summary>
+									<p>
+										Those who look into your eyes can see that you have faced unimaginable horror and that you are no stranger to darkness. Though they might
+										fear you, commoners will extend you every courtesy and do their utmost to help you. Unless you have shown yourself to be a danger to them,
+										they will even take up arms to fight alongside you, should you find yourself facing an enemy alone.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-noble" value="noble" /> <label for="background-noble">Noble</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You understand wealth, power, and privilege. You carry a noble title, and your family owns land, collects taxes, and wields significant
+										political influence. You might be a pampered aristocrat unfamiliar with work or discomfort, a former merchant just elevated to the nobility,
+										or a disinherited scoundrel with a disproportionate sense of entitlement. Or you could be an honest, hard-working landowner who cares deeply
+										about the people who live and work on your land, keenly aware of your responsibility to them.
+									</p>
+									<p>
+										Work with your DM to come up with an appropriate title and determine how much authority that title carries. A noble title doesn’t stand on
+										its own—it’s connected to an entire family, and whatever title you hold, you will pass it down to your own children. Not only do you need to
+										determine your noble title, but you should also work with the DM to describe your family and their influence on you.
+									</p>
+
+									<p>
+										Is your family old and established, or was your title only recently bestowed? How much influence do they wield, and over what area? What
+										kind of reputation does your family have among the other aristocrats of the region? How do the common people regard them?
+									</p>
+
+									<p>
+										What’s your position in the family? Are you the heir to the head of the family? Have you already inherited the title? How do you feel about
+										that responsibility? Or are you so far down the line of inheritance that no one cares what you do, as long as you don’t embarrass the
+										family? How does the head of your family feel about your adventuring career? Are you in your family’s good graces, or shunned by the rest of
+										your family?
+									</p>
+
+									<p>
+										Does your family have a coat of arms? An insignia you might wear on a signet ring? Particular colors you wear all the time? An animal you
+										regard as a symbol of your line or even a spiritual member of the family?
+									</p>
+									<p>
+										These details help establish your family and your title as features of the world of the campaign.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Position of Privilege</em></summary>
+									<p>
+										Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the
+										right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high
+										birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-sage" value="sage" /> <label for="background-sage">Sage</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the
+										subjects that interest you. Your efforts have made you a master in your fields of study.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Researcher</em></summary>
+									<p>
+										When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain
+										it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might
+										rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest
+										secrets of the multiverse can require an adventure or even a whole campaign.
+									</p>
+								</details>
+							</dd>
+
+							<dt>
+								<input type="radio" name="background" id="background-soldier" value="soldier" /> <label for="background-soldier">Soldier</label>
+							</dt>
+							<dd>
+								<details>
+									<summary>Description</summary>
+									<p>
+										War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic
+										survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army or a mercenary
+										company, or perhaps a member of a local militia who rose to prominence during a recent war.
+									</p>
+									<p>
+										When you choose this background, work with your DM to determine which military organization you were a part of, how far through its ranks
+										you progressed, and what kind of experiences you had during your military career. Was it a standing army, a town guard, or a village
+										militia? Or it might have been a noble’s or merchant’s private army, or a mercenary company.
+									</p>
+								</details>
+								<details>
+									<summary>Background Feature: <em>Military Rank</em></summary>
+									<p>
+										You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority
+										and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and
+										requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses
+										where your rank is recognized.
+									</p>
+								</details>
+							</dd>
+						</dl>
+					</fieldset>
+					<fieldset>
+						<legend>Proficiencies</legend>
+
+						<div class="background-proficiencies" id="background-proficiencies-acolyte">
+							<p><strong>Skill proficiencies:</strong> Insight, Religion</p>
+							<input type="hidden" name="skill-proficiency" value="insight" disabled />
+							<input type="hidden" name="skill-proficiency" value="religion" disabled />
+
+							<p>
+								<label for="acolyte-proficiency1">Select a language</label>
+								<select name="language-proficiency" id="acolyte-proficiency1" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="acolyte-proficiency2">Select a language</label>
+								<select name="language-proficiency" id="acolyte-proficiency2" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-criminal">
+							<p><strong>Skill proficiencies:</strong> Deception, Stealth</p>
+							<input type="hidden" name="skill-proficiency" value="deception" disabled />
+							<input type="hidden" name="skill-proficiency" value="stealth" disabled />
+
+							<p><strong>Tool proficiency:</strong> Thieves' Tools</p>
+							<input type="hidden" name="tool-proficiency" value="tieves-tools" disabled />
+
+							<p>
+								<label for="criminal-proficiency1">Select a gaming set</label>
+								<select name="tool-proficiency" id="criminal-proficiency1" required disabled>
+									<option value="dice">Dice Set</option>
+									<option value="dragonchess">Dragonchess Set</option>
+									<option value="cards">Playing Cards Set</option>
+									<option value="three-dragon-ante">Three-Dragon Ante Set</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-folk-hero">
+							<p><strong>Skill proficiencies:</strong> Animal Handling, Survival</p>
+							<input type="hidden" name="skill-proficiency" value="animal-handling" disabled />
+							<input type="hidden" name="skill-proficiency" value="survival" disabled />
+
+							<p><strong>Tool proficiency:</strong> Vehicles (Land)</p>
+							<input type="hidden" name="tool-proficiency" value="vehicles-land" disabled />
+
+							<p>
+								<label for="folk-hero-proficiency1">Select an artisan's tools</label>
+								<select name="tool-proficiency" id="folk-hero-proficiency1" required disabled>
+									<option value="alchemists-supplies">Alchemist's Supplies</option>
+									<option value="brewer-supplies">Brewer's Supplies</option>
+									<option value="calligraphers-supplies">Calligrapher's Supplies</option>
+									<option value="carpenters-tools">Carpenter's Tools</option>
+									<option value="cartographers-tools">Cartographer's Tools</option>
+									<option value="cobblers-tools">Cobbler's Tools</option>
+									<option value="cook-utensils">Cook's Utensils</option>
+									<option value="glassblowers-tools">Glassblower's Tools</option>
+									<option value="jewelers-tools">Jeweler's Tools</option>
+									<option value="leatherworkers-tools">Leatherworker's Tools</option>
+									<option value="masons-tools">Mason's Tools</option>
+									<option value="painters-supplies">Painter's Supplies</option>
+									<option value="potters-tools">Potter's Tools</option>
+									<option value="smiths-tools">Smith's Tools</option>
+									<option value="tinkers-tools">Tinker's Tools</option>
+									<option value="weavers-tools">Weaver's Tools</option>
+									<option value="woodcarvers-tools">Woodcarver's Tools</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-haunted-one">
+							<p>
+								<label for="haunted-one-proficiency1">Select a skill</label>
+								<select name="skill-proficiency" id="haunted-one-proficiency1" required disabled>
+									<option value="arcana">Arcana</option>
+									<option value="investigation">Investigation</option>
+									<option value="religion">Religion</option>
+									<option value="survival">Survival</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="haunted-one-proficiency2">Select a skill</label>
+								<select name="skill-proficiency" id="haunted-one-proficiency2" required disabled>
+									<option value="arcana">Arcana</option>
+									<option value="investigation">Investigation</option>
+									<option value="religion">Religion</option>
+									<option value="survival">Survival</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="haunted-one-proficiency3">Select a language</label>
+								<select name="language-proficiency" id="haunted-one-proficiency3" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="haunted-one-proficiency4">Select a rare language</label>
+								<select name="language-proficiency" id="haunted-one-proficiency4" required disabled>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Deep Speech</option>
+									<option>Infernal</option>
+									<option>Primordial</option>
+									<option>Sylvan</option>
+									<option>Undercommon</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-noble">
+							<p><strong>Skill proficiencies:</strong> History, Persuasion</p>
+							<input type="hidden" name="skill-proficiency" value="history" disabled />
+							<input type="hidden" name="skill-proficiency" value="persuasion" disabled />
+
+							<p>
+								<label for="noble-proficiency1">Select a gaming set</label>
+								<select name="tool-proficiency" id="noble-proficiency1" required disabled>
+									<option value="dice">Dice Set</option>
+									<option value="dragonchess">Dragonchess Set</option>
+									<option value="cards">Playing Cards Set</option>
+									<option value="three-dragon-ante">Three-Dragon Ante Set</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="noble-proficiency2">Select a language</label>
+								<select name="language-proficiency" id="noble-proficiency2" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-sage">
+							<p><strong>Skill proficiencies:</strong> Arcana, History</p>
+							<input type="hidden" name="skill-proficiency" value="arcana" disabled />
+							<input type="hidden" name="skill-proficiency" value="history" disabled />
+
+							<p>
+								<label for="sage-proficiency1">Select a language</label>
+								<select name="language-proficiency" id="sage-proficiency1" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+
+							<p>
+								<label for="sage-proficiency2">Select a language</label>
+								<select name="language-proficiency" id="sage-proficiency2" required disabled>
+									<option>Abanasinian</option>
+									<option>Abyssal</option>
+									<option>Celestial</option>
+									<option>Daelkyr</option>
+									<option>Deep Speech</option>
+									<option>Dwarvish</option>
+									<option>Elvish</option>
+									<option>Ergot</option>
+									<option>Giant</option>
+									<option>Gith</option>
+									<option>Gnomish</option>
+									<option>Goblin</option>
+									<option>Hadozee</option>
+									<option>Halfling</option>
+									<option>Infernal</option>
+									<option>Istarian</option>
+									<option>Kenderspeak</option>
+									<option>Kharolian</option>
+									<option>Khur</option>
+									<option>Kothian</option>
+									<option>Kraul</option>
+									<option>Leonin</option>
+									<option>Loxodon</option>
+									<option>Marquesian</option>
+									<option>Minotaur</option>
+									<option>Naush</option>
+									<option>Nerakese</option>
+									<option>Nordmaarian</option>
+									<option>Ogre</option>
+									<option>Orc</option>
+									<option>Primordial</option>
+									<option>Quori</option>
+									<option>Riedran</option>
+									<option>Solamnic</option>
+									<option>Sylvan</option>
+									<option>Thri-kreen</option>
+									<option>Undercommon</option>
+									<option>Vedalken</option>
+									<option>Zemnian</option>
+								</select>
+							</p>
+						</div>
+						<div class="background-proficiencies" id="background-proficiencies-soldier">
+							<p><strong>Skill proficiencies:</strong> Athletics, Intimidation</p>
+							<input type="hidden" name="skill-proficiency" value="athletics" disabled />
+							<input type="hidden" name="skill-proficiency" value="intimidation" disabled />
+
+							<p><strong>Tool proficiency:</strong> Vehicles (Land)</p>
+							<input type="hidden" name="tool-proficiency" value="vehicles-land" disabled />
+
+							<p>
+								<label for="soldier-proficiency1">Select a gaming set</label>
+								<select name="tool-proficiency" id="soldier-proficiency1" required disabled>
+									<option value="dice">Dice Set</option>
+									<option value="dragonchess">Dragonchess Set</option>
+									<option value="cards">Playing Cards Set</option>
+									<option value="three-dragon-ante">Three-Dragon Ante Set</option>
+								</select>
+							</p>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Personal characteristics</legend>
+						<p>
+							<label for="personality-traits">Personality Traits</label> <textarea name="personality-traits" id="personality-traits" rows="10"></textarea>
+						</p>
+						<p>
+							<label for="ideals">Ideals</label> <textarea name="ideals" id="ideals" rows="10"></textarea>
+						</p>
+						<p>
+							<label for="bonds">Bonds</label> <textarea name="bonds" id="bonds" rows="10"></textarea>
+						</p>
+						<p>
+							<label for="flaws">Flaws</label> <textarea name="flaws" id="flaws" rows="10"></textarea>
+						</p>
+					</fieldset>
+					<footer>
+						<nav aria-label="Form Actions">
+							<button type="submit" class="prev-button" formaction="./abilities.html" data-target="abilities">Previous</button>
+							<button type="reset" class="reset-button">Clear fields</button>
+							<button type="submit" class="next-button" data-target="equipment">Next</button>
+						</nav>
+					</footer>
+				</article>
+			</form>
+		</dialog>
+	</body>
+</html>

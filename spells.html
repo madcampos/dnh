@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+
+		<dialog open id="spells">
+			<form action="./summary.html" method="post">
+				<article>
+					<header>
+						<h2>Spells</h2>
+						<div>
+							<label for="form-progress6">Progress:</label> <progress id="form-progress6" max="6" value="6" aria-label="6 of 6">6 of 6</progress>
+						</div>
+					</header>
+					<!-- TODO: add each spell level and spells list -->
+					<fieldset>
+						<legend>Level 0 (Cantrip) Spells</legend>
+						<search hidden>
+							<label for="spell-search0">Filter cantrips:</label>
+							<input type="search" id="spell-search0" />
+							<button type="button">Search</button>
+						</search>
+						<div class="spell-list">
+							<dd>
+								<dt data-classes="">
+									<input type="checkbox" name="spell" id="spell-" value="" title="Check to mark it as a known/prepared spell" /> <label for="spell-"></label>
+								</dt>
+								<dd></dd>
+							</dd>
+						</div>
+					</fieldset>
+					<footer>
+						<nav aria-label="Form Actions">
+							<button type="submit" class="prev-button" formaction="./equipment.html" data-target="equipment">Previous</button>
+							<button type="reset" class="reset-button">Clear fields</button>
+							<button type="submit" class="next-button" data-target="summary">Next</button>
+						</nav>
+					</footer>
+				</article>
+			</form>
+		</dialog>
+	</body>
+</html>

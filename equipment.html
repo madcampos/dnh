@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dungeons & HTML</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<h1>Dungeons & Dragons Character Sheet</h1>
+
+		<dialog open id="equipment">
+			<form action="./spells.html" method="post">
+				<article>
+					<header>
+						<h2>Equipment</h2>
+						<div>
+							<label for="form-progress5">Progress:</label> <progress id="form-progress5" max="6" value="5" aria-label="5 of 6">5 of 6</progress>
+						</div>
+					</header>
+					<fieldset>
+						<legend>Currency</legend>
+						<p>
+							<label for="pp">Platium Pieces (<abbr>PP</abbr>)</label>
+							<span>1 <abbr>PP</abbr> = 10 <abbr>GP</abbr></span>
+							<input
+								type="number"
+								name="pp"
+								id="pp"
+								min="0"
+							/>
+						</p>
+						<p>
+							<label for="gp">Gold Pieces (<abbr>GP</abbr>)</label>
+							<span>1 <abbr>GP</abbr> = 10 <abbr>SP</abbr></span>
+							<input
+								type="number"
+								name="gp"
+								id="gp"
+								min="0"
+							/>
+						</p>
+						<p>
+							<label for="ep">Electrum Pieces (<abbr>EP</abbr>)</label>
+							<span>1 <abbr>EP</abbr> = 5 <abbr>SP</abbr></span>
+							<input
+								type="number"
+								name="ep"
+								id="ep"
+								min="0"
+							/>
+						</p>
+						<p>
+							<label for="sp">Silve Pieces (<abbr>SP</abbr>)</label>
+							<span>1 <abbr>SP</abbr> = 10 <abbr>CP</abbr></span>
+							<input
+								type="number"
+								name="sp"
+								id="sp"
+								min="0"
+							/>
+						</p>
+						<p>
+							<label for="cp">Copper Pieces (<abbr>CP</abbr>)</label>
+							<input
+								type="number"
+								name="cp"
+								id="cp"
+								min="0"
+							/>
+						</p>
+					</fieldset>
+					<fieldset>
+						<legend>Gear</legend>
+						<!-- TODO: add web component with JS -->
+						<!-- TODO: add fields that affect character, like AC bonus -->
+						<textarea rows="20" cols="70" id="equipament-list" name="equipament-list" aria-label="Equipament list"></textarea>
+					</fieldset>
+					<fieldset>
+						<legend>Total Weight</legend>
+						<meter
+							min="0"
+							low="33"
+							optimum="50"
+							high="66"
+							max="100"
+							value="50"
+						></meter>
+					</fieldset>
+					<footer>
+						<nav aria-label="Form Actions">
+							<button type="submit" class="prev-button" formaction="./description.html" data-target="description">Previous</button>
+							<button type="reset" class="reset-button">Clear fields</button>
+							<button type="submit" class="next-button" data-target="spells">Next</button>
+						</nav>
+					</footer>
+				</article>
+			</form>
+		</dialog>
+	</body>
+</html>
