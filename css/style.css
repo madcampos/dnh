@@ -18,7 +18,12 @@ dialog {
 	width: calc(100% - 2rem);
 }
 
-button { font-size: inherit; }
+input, select, button, textarea { font-size: inherit; }
+
+input, select, textarea {
+	border: solid currentColor medium;
+	border-radius: 0.5rem;
+}
 
 fieldset {
 	border: solid medium currentColor;
@@ -31,6 +36,26 @@ summary {
 	border: solid currentColor medium;
 	border-radius: 0.5rem;
 	padding: 0.5rem 1rem;
+}
+
+/* dprint-ignore */
+details:has( :invalid) summary {
+	color: red;
+	font-weight: bold;
+
+	&::after { content: ' (Needs attention ⚠️)'; }
+}
+
+label:has(~ :is(input, select):invalid) {
+	color: red;
+	font-weight: bold;
+
+	&::before { content: '⚠️ '; }
+}
+
+:is(input, select):invalid {
+	color: red;
+	font-weight: bold;
 }
 
 header div { text-align: center; }
@@ -58,13 +83,4 @@ header div { text-align: center; }
 	&:has(#race-halfling:checked) #race-details-halfling { display: block; }
 	&:has(#race-human:checked) #race-details-human { display: block; }
 	&:has(#race-tiefling:checked) #race-details-tiefling { display: block; }
-
-	/* dprint-ignore */
-	details:has( :invalid) summary {
-		border-color: red;
-		color: red;
-		font-weight: bold;
-
-		&::after { content: ' (Needs attention ⚠️)'; }
-	}
 }
