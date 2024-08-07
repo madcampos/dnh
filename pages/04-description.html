@@ -10,7 +10,7 @@
 		<h1>Dungeons & Dragons Character Sheet</h1>
 
 		<dialog open id="description">
-			<form action="./equipment.html" method="post">
+			<form action="./05-equipment.html" method="post">
 				<article>
 					<header>
 						<h2>Description</h2>
@@ -26,7 +26,7 @@
 						</p>
 
 						<p>
-							<label for="">Player name</label> <input type="text" id="player-name" name="player-name" required />
+							<label for="">Player name</label> <input type="text" id="player-name" name="playerName" required />
 						</p>
 
 						<hr />
@@ -168,7 +168,7 @@
 					</fieldset>
 					<fieldset>
 						<legend>Picture</legend>
-						<input type="file" aria-label="Character Picture" accept="image/*" />
+						<input type="file" name="picture" id="picture" aria-label="Character Picture" accept="image/*" />
 					</fieldset>
 					<fieldset>
 						<legend>Physical characteristics</legend>
@@ -243,7 +243,7 @@
 						<legend>Select Background</legend>
 						<dl>
 							<dt>
-								<input type="radio" name="background" id="background-acolyte" value="acolyte" /> <label for="background-acolyte">Acolyte</label>
+								<input type="radio" name="background" id="background-acolyte" value="acolyte" required /> <label for="background-acolyte">Acolyte</label>
 							</dt>
 							<dd>
 								<details>
@@ -280,7 +280,7 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-criminal" value="criminal" /> <label for="background-criminal">Criminal / Spy</label>
+								<input type="radio" name="background" id="background-criminal" value="criminal" required /> <label for="background-criminal">Criminal / Spy</label>
 							</dt>
 							<dd>
 								<details>
@@ -303,7 +303,7 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-folk-hero" value="folk-hero" /> <label for="background-folk-hero">Folk Hero</label>
+								<input type="radio" name="background" id="background-folk-hero" value="folk-hero" required /> <label for="background-folk-hero">Folk Hero</label>
 							</dt>
 							<dd>
 								<details>
@@ -324,7 +324,8 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-haunted-one" value="haunted-one" /> <label for="background-haunted-one">Haunted One</label>
+								<input type="radio" name="background" id="background-haunted-one" value="haunted-one" required />
+								<label for="background-haunted-one">Haunted One</label>
 							</dt>
 							<dd>
 								<details>
@@ -347,7 +348,7 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-noble" value="noble" /> <label for="background-noble">Noble</label>
+								<input type="radio" name="background" id="background-noble" value="noble" required /> <label for="background-noble">Noble</label>
 							</dt>
 							<dd>
 								<details>
@@ -395,7 +396,7 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-sage" value="sage" /> <label for="background-sage">Sage</label>
+								<input type="radio" name="background" id="background-sage" value="sage" required /> <label for="background-sage">Sage</label>
 							</dt>
 							<dd>
 								<details>
@@ -417,7 +418,7 @@
 							</dd>
 
 							<dt>
-								<input type="radio" name="background" id="background-soldier" value="soldier" /> <label for="background-soldier">Soldier</label>
+								<input type="radio" name="background" id="background-soldier" value="soldier" required /> <label for="background-soldier">Soldier</label>
 							</dt>
 							<dd>
 								<details>
@@ -450,12 +451,12 @@
 
 						<div class="background-proficiencies" id="background-proficiencies-acolyte">
 							<p><strong>Skill proficiencies:</strong> Insight, Religion</p>
-							<input type="hidden" name="skill-proficiency" value="insight" disabled />
-							<input type="hidden" name="skill-proficiency" value="religion" disabled />
+							<input type="hidden" name="skillProficiencies" value="insight" disabled />
+							<input type="hidden" name="skillProficiencies" value="religion" disabled />
 
 							<p>
 								<label for="acolyte-proficiency1">Select a language</label>
-								<select name="language-proficiency" id="acolyte-proficiency1" required disabled>
+								<select name="languageProficiencies" id="acolyteProficiency1" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -500,7 +501,7 @@
 
 							<p>
 								<label for="acolyte-proficiency2">Select a language</label>
-								<select name="language-proficiency" id="acolyte-proficiency2" required disabled>
+								<select name="languageProficiencies" id="acolyteProficiency2" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -545,15 +546,15 @@
 						</div>
 						<div class="background-proficiencies" id="background-proficiencies-criminal">
 							<p><strong>Skill proficiencies:</strong> Deception, Stealth</p>
-							<input type="hidden" name="skill-proficiency" value="deception" disabled />
-							<input type="hidden" name="skill-proficiency" value="stealth" disabled />
+							<input type="hidden" name="skillProficiencies" value="deception" disabled />
+							<input type="hidden" name="skillProficiencies" value="stealth" disabled />
 
 							<p><strong>Tool proficiency:</strong> Thieves' Tools</p>
-							<input type="hidden" name="tool-proficiency" value="tieves-tools" disabled />
+							<input type="hidden" name="toolProficiencies" value="tieves-tools" disabled />
 
 							<p>
 								<label for="criminal-proficiency1">Select a gaming set</label>
-								<select name="tool-proficiency" id="criminal-proficiency1" required disabled>
+								<select name="toolProficiencies" id="criminal-proficiency1" required disabled>
 									<option value="dice">Dice Set</option>
 									<option value="dragonchess">Dragonchess Set</option>
 									<option value="cards">Playing Cards Set</option>
@@ -563,15 +564,15 @@
 						</div>
 						<div class="background-proficiencies" id="background-proficiencies-folk-hero">
 							<p><strong>Skill proficiencies:</strong> Animal Handling, Survival</p>
-							<input type="hidden" name="skill-proficiency" value="animal-handling" disabled />
-							<input type="hidden" name="skill-proficiency" value="survival" disabled />
+							<input type="hidden" name="skillProficiencies" value="animal-handling" disabled />
+							<input type="hidden" name="skillProficiencies" value="survival" disabled />
 
 							<p><strong>Tool proficiency:</strong> Vehicles (Land)</p>
-							<input type="hidden" name="tool-proficiency" value="vehicles-land" disabled />
+							<input type="hidden" name="toolProficiencies" value="vehicles-land" disabled />
 
 							<p>
 								<label for="folk-hero-proficiency1">Select an artisan's tools</label>
-								<select name="tool-proficiency" id="folk-hero-proficiency1" required disabled>
+								<select name="toolProficiencies" id="folk-hero-proficiency1" required disabled>
 									<option value="alchemists-supplies">Alchemist's Supplies</option>
 									<option value="brewer-supplies">Brewer's Supplies</option>
 									<option value="calligraphers-supplies">Calligrapher's Supplies</option>
@@ -595,7 +596,7 @@
 						<div class="background-proficiencies" id="background-proficiencies-haunted-one">
 							<p>
 								<label for="haunted-one-proficiency1">Select a skill</label>
-								<select name="skill-proficiency" id="haunted-one-proficiency1" required disabled>
+								<select name="skillProficiencies" id="haunted-one-proficiency1" required disabled>
 									<option value="arcana">Arcana</option>
 									<option value="investigation">Investigation</option>
 									<option value="religion">Religion</option>
@@ -605,7 +606,7 @@
 
 							<p>
 								<label for="haunted-one-proficiency2">Select a skill</label>
-								<select name="skill-proficiency" id="haunted-one-proficiency2" required disabled>
+								<select name="skillProficiencies" id="haunted-one-proficiency2" required disabled>
 									<option value="arcana">Arcana</option>
 									<option value="investigation">Investigation</option>
 									<option value="religion">Religion</option>
@@ -615,7 +616,7 @@
 
 							<p>
 								<label for="haunted-one-proficiency3">Select a language</label>
-								<select name="language-proficiency" id="haunted-one-proficiency3" required disabled>
+								<select name="languageProficiencies" id="haunted-oneProficiency3" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -660,7 +661,7 @@
 
 							<p>
 								<label for="haunted-one-proficiency4">Select a rare language</label>
-								<select name="language-proficiency" id="haunted-one-proficiency4" required disabled>
+								<select name="languageProficiencies" id="haunted-oneProficiency4" required disabled>
 									<option>Abyssal</option>
 									<option>Celestial</option>
 									<option>Deep Speech</option>
@@ -673,12 +674,12 @@
 						</div>
 						<div class="background-proficiencies" id="background-proficiencies-noble">
 							<p><strong>Skill proficiencies:</strong> History, Persuasion</p>
-							<input type="hidden" name="skill-proficiency" value="history" disabled />
-							<input type="hidden" name="skill-proficiency" value="persuasion" disabled />
+							<input type="hidden" name="skillProficiencies" value="history" disabled />
+							<input type="hidden" name="skillProficiencies" value="persuasion" disabled />
 
 							<p>
 								<label for="noble-proficiency1">Select a gaming set</label>
-								<select name="tool-proficiency" id="noble-proficiency1" required disabled>
+								<select name="toolProficiencies" id="noble-proficiency1" required disabled>
 									<option value="dice">Dice Set</option>
 									<option value="dragonchess">Dragonchess Set</option>
 									<option value="cards">Playing Cards Set</option>
@@ -688,7 +689,7 @@
 
 							<p>
 								<label for="noble-proficiency2">Select a language</label>
-								<select name="language-proficiency" id="noble-proficiency2" required disabled>
+								<select name="languageProficiencies" id="nobleProficiency2" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -733,12 +734,12 @@
 						</div>
 						<div class="background-proficiencies" id="background-proficiencies-sage">
 							<p><strong>Skill proficiencies:</strong> Arcana, History</p>
-							<input type="hidden" name="skill-proficiency" value="arcana" disabled />
-							<input type="hidden" name="skill-proficiency" value="history" disabled />
+							<input type="hidden" name="skillProficiencies" value="arcana" disabled />
+							<input type="hidden" name="skillProficiencies" value="history" disabled />
 
 							<p>
 								<label for="sage-proficiency1">Select a language</label>
-								<select name="language-proficiency" id="sage-proficiency1" required disabled>
+								<select name="languageProficiencies" id="sageProficiency1" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -783,7 +784,7 @@
 
 							<p>
 								<label for="sage-proficiency2">Select a language</label>
-								<select name="language-proficiency" id="sage-proficiency2" required disabled>
+								<select name="languageProficiencies" id="sageProficiency2" required disabled>
 									<option>Abanasinian</option>
 									<option>Abyssal</option>
 									<option>Celestial</option>
@@ -828,15 +829,15 @@
 						</div>
 						<div class="background-proficiencies" id="background-proficiencies-soldier">
 							<p><strong>Skill proficiencies:</strong> Athletics, Intimidation</p>
-							<input type="hidden" name="skill-proficiency" value="athletics" disabled />
-							<input type="hidden" name="skill-proficiency" value="intimidation" disabled />
+							<input type="hidden" name="skillProficiencies" value="athletics" disabled />
+							<input type="hidden" name="skillProficiencies" value="intimidation" disabled />
 
 							<p><strong>Tool proficiency:</strong> Vehicles (Land)</p>
-							<input type="hidden" name="tool-proficiency" value="vehicles-land" disabled />
+							<input type="hidden" name="toolProficiencies" value="vehicles-land" disabled />
 
 							<p>
 								<label for="soldier-proficiency1">Select a gaming set</label>
-								<select name="tool-proficiency" id="soldier-proficiency1" required disabled>
+								<select name="toolProficiencies" id="soldier-proficiency1" required disabled>
 									<option value="dice">Dice Set</option>
 									<option value="dragonchess">Dragonchess Set</option>
 									<option value="cards">Playing Cards Set</option>
@@ -848,7 +849,7 @@
 					<fieldset>
 						<legend>Personal characteristics</legend>
 						<p>
-							<label for="personality-traits">Personality Traits</label> <textarea name="personality-traits" id="personality-traits" rows="10"></textarea>
+							<label for="personality-traits">Personality Traits</label> <textarea name="traits" id="personality-traits" rows="10"></textarea>
 						</p>
 						<p>
 							<label for="ideals">Ideals</label> <textarea name="ideals" id="ideals" rows="10"></textarea>
@@ -862,7 +863,7 @@
 					</fieldset>
 					<footer>
 						<nav aria-label="Form Actions">
-							<button type="submit" class="prev-button" formaction="./abilities.html" data-target="abilities">Previous</button>
+							<button type="submit" class="prev-button" formaction="./03-abilities.html" data-target="abilities">Previous</button>
 							<button type="reset" class="reset-button">Clear fields</button>
 							<button type="submit" class="next-button" data-target="equipment">Next</button>
 						</nav>
