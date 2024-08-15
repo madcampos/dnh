@@ -1,5 +1,6 @@
 import { loadCharacter, updateCharacter } from './character.js';
 import { clearValue, loadForms, loadValue, saveStep, updateValue } from './forms.js';
+import { abilitiesFormHandling } from './forms/abilities.js';
 import { classFormHandling } from './forms/class.js';
 import { raceFormHandling } from './forms/race.js';
 
@@ -33,6 +34,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		/** @type {HTMLDialogElement} */ (form.parentElement).open = false;
 		nextForm.open = true;
+
+		document.dispatchEvent(new CustomEvent('dnd-next-step', { detail: nextForm.id }));
 	});
 
 	// Clear saved data on reset
@@ -48,4 +51,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 	raceFormHandling();
 	classFormHandling();
+	abilitiesFormHandling();
 });
