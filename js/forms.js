@@ -18,7 +18,7 @@ export async function loadForms() {
 
 	// Update all dialogs to be closed and all forms to use dialogs as targets.
 	document.querySelectorAll('dialog').forEach((dialog) => {
-		const savedStep = localStorage.getItem('step') ?? 'race';
+		const savedStep = getCurrentStep();
 
 		dialog.open = dialog.id === savedStep;
 
@@ -50,6 +50,10 @@ export function updateValue(/** @type {HTMLInputElement | HTMLSelectElement | HT
 	}
 
 	if (element instanceof HTMLInputElement && (element.type === 'radio' || element.type === 'checkbox')) {
+		document.querySelectorAll(`input[name="${element.name}"]`).forEach((el) => {
+			localStorage.setItem(`#${el.id}`, 'false');
+		});
+
 		localStorage.setItem(`#${element.id}`, element.checked ? 'true' : 'false');
 	} else {
 		localStorage.setItem(`#${element.id}`, element.value);
@@ -65,14 +69,9 @@ export function clearValue(/** @type {HTMLInputElement | HTMLSelectElement | HTM
 }
 
 export function saveStep(/** @type {string} */ step) {
-	const previousSteps = JSON.parse(localStorage.getItem('step') ?? '[]');
-	const updatedSteps = [...new Set([...previousSteps, step])];
-
-	localStorage.setItem('step', JSON.stringify(updatedSteps));
+	localStorage.setItem('step', step);
 }
 
-export function shouldUpdateCharacter(/** @type {string} */ step) {
-	const steps = JSON.parse(localStorage.getItem('step') ?? '[]');
-
-	return !steps.includes(step);
+export function getCurrentStep() {
+	return localStorage.getItem('step') ?? 'race';
 }
