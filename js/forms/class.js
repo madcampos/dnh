@@ -3,9 +3,10 @@ export function classFormHandling() {
 
 	classContainer.dataset.jsUpdateLevel = '';
 
-	const startingLevel = /** @type {HTMLInputElement | null} */ (document.querySelector('[name="level"]'))?.value ?? '1';
+	const startingLevel = Number.parseInt(/** @type {HTMLInputElement | null} */ (document.querySelector('[name="level"]'))?.value ?? '1');
+	const levelsSelector = new Array(startingLevel).fill(undefined).map((_, index) => `[data-level="${index + 1}"]`).join(', ');
 
-	classContainer.dataset.currentLevel = startingLevel;
+	classContainer.dataset.currentLevel = startingLevel.toString();
 
 	// Handle class features enabling
 	const selectedClass = /** @type {HTMLInputElement | null} */ (document.querySelector('[name="class"]:checked'));
@@ -13,7 +14,7 @@ export function classFormHandling() {
 	if (selectedClass) {
 		// @ts-expect-error
 		/** @type {(HTMLInputElement | HTMLSelectElement)[]} */ (
-			document.querySelectorAll(`#class-features-${selectedClass.value} :is(input, select)`)
+			document.querySelectorAll(`#class-features-${selectedClass.value} :is(${levelsSelector}) :is(input, select)`)
 		).forEach((element) => {
 			element.disabled = false;
 		});
