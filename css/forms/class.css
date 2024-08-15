@@ -1,0 +1,258 @@
+#class {
+	#class-list {
+		columns: 3;
+
+		& *:nth-child(2) { margin-block-start: 0; }
+		& *:last-child { margin-block-end: 0; }
+	}
+
+	.class-features { display: none; }
+
+	#class-features-none { text-align: center; }
+
+	/* dprint-ignore */
+	&:not(:has( input:checked)) #class-features-none { display: block; }
+	&:has(#class-barbarian:checked) #class-features-barbarian { display: block; }
+	&:has(#class-bard:checked) #class-features-bard { display: block; }
+	&:has(#class-cleric:checked) #class-features-cleric { display: block; }
+	&:has(#class-druid:checked) #class-features-druid { display: block; }
+	&:has(#class-fighter:checked) #class-features-fighter { display: block; }
+	&:has(#class-monk:checked) #class-features-monk { display: block; }
+	&:has(#class-paladin:checked) #class-features-paladin { display: block; }
+	&:has(#class-ranger:checked) #class-features-ranger { display: block; }
+	&:has(#class-rogue:checked) #class-features-rogue { display: block; }
+	&:has(#class-sorcerer:checked) #class-features-sorcerer { display: block; }
+	&:has(#class-warlock:checked) #class-features-warlock { display: block; }
+	&:has(#class-wizard:checked) #class-features-wizard { display: block; }
+
+	&[data-js-update-level] {
+		[data-level] { display: none; }
+
+		&[data-current-level='1'] [data-level='1'] { display: block; }
+
+		&[data-current-level='2'] [data-level='1'], &[data-current-level='2'] [data-level='2'] { display: block; }
+
+		&[data-current-level='3'] [data-level='1'], &[data-current-level='3'] [data-level='2'], &[data-current-level='3'] [data-level='3'] { display: block; }
+
+		&[data-current-level='4'] [data-level='1'],
+		&[data-current-level='4'] [data-level='2'],
+		&[data-current-level='4'] [data-level='3'],
+		&[data-current-level='4'] [data-level='4'] { display: block; }
+
+		&[data-current-level='5'] [data-level='1'],
+		&[data-current-level='5'] [data-level='2'],
+		&[data-current-level='5'] [data-level='3'],
+		&[data-current-level='5'] [data-level='4'],
+		&[data-current-level='5'] [data-level='5'] { display: block; }
+
+		&[data-current-level='6'] [data-level='1'],
+		&[data-current-level='6'] [data-level='2'],
+		&[data-current-level='6'] [data-level='3'],
+		&[data-current-level='6'] [data-level='4'],
+		&[data-current-level='6'] [data-level='5'],
+		&[data-current-level='6'] [data-level='6'] { display: block; }
+
+		&[data-current-level='7'] [data-level='1'],
+		&[data-current-level='7'] [data-level='2'],
+		&[data-current-level='7'] [data-level='3'],
+		&[data-current-level='7'] [data-level='4'],
+		&[data-current-level='7'] [data-level='5'],
+		&[data-current-level='7'] [data-level='6'],
+		&[data-current-level='7'] [data-level='7'] { display: block; }
+
+		&[data-current-level='8'] [data-level='1'],
+		&[data-current-level='8'] [data-level='2'],
+		&[data-current-level='8'] [data-level='3'],
+		&[data-current-level='8'] [data-level='4'],
+		&[data-current-level='8'] [data-level='5'],
+		&[data-current-level='8'] [data-level='6'],
+		&[data-current-level='8'] [data-level='7'],
+		&[data-current-level='8'] [data-level='8'] { display: block; }
+
+		&[data-current-level='9'] [data-level='1'],
+		&[data-current-level='9'] [data-level='2'],
+		&[data-current-level='9'] [data-level='3'],
+		&[data-current-level='9'] [data-level='4'],
+		&[data-current-level='9'] [data-level='5'],
+		&[data-current-level='9'] [data-level='6'],
+		&[data-current-level='9'] [data-level='7'],
+		&[data-current-level='9'] [data-level='8'],
+		&[data-current-level='9'] [data-level='9'] { display: block; }
+
+		&[data-current-level='10'] [data-level='1'],
+		&[data-current-level='10'] [data-level='2'],
+		&[data-current-level='10'] [data-level='3'],
+		&[data-current-level='10'] [data-level='4'],
+		&[data-current-level='10'] [data-level='5'],
+		&[data-current-level='10'] [data-level='6'],
+		&[data-current-level='10'] [data-level='7'],
+		&[data-current-level='10'] [data-level='8'],
+		&[data-current-level='10'] [data-level='9'],
+		&[data-current-level='10'] [data-level='10'] { display: block; }
+
+		&[data-current-level='11'] [data-level='1'],
+		&[data-current-level='11'] [data-level='2'],
+		&[data-current-level='11'] [data-level='3'],
+		&[data-current-level='11'] [data-level='4'],
+		&[data-current-level='11'] [data-level='5'],
+		&[data-current-level='11'] [data-level='6'],
+		&[data-current-level='11'] [data-level='7'],
+		&[data-current-level='11'] [data-level='8'],
+		&[data-current-level='11'] [data-level='9'],
+		&[data-current-level='11'] [data-level='10'],
+		&[data-current-level='11'] [data-level='11'] { display: block; }
+
+		&[data-current-level='12'] [data-level='1'],
+		&[data-current-level='12'] [data-level='2'],
+		&[data-current-level='12'] [data-level='3'],
+		&[data-current-level='12'] [data-level='4'],
+		&[data-current-level='12'] [data-level='5'],
+		&[data-current-level='12'] [data-level='6'],
+		&[data-current-level='12'] [data-level='7'],
+		&[data-current-level='12'] [data-level='8'],
+		&[data-current-level='12'] [data-level='9'],
+		&[data-current-level='12'] [data-level='10'],
+		&[data-current-level='12'] [data-level='11'],
+		&[data-current-level='12'] [data-level='12'] { display: block; }
+
+		&[data-current-level='13'] [data-level='1'],
+		&[data-current-level='13'] [data-level='2'],
+		&[data-current-level='13'] [data-level='3'],
+		&[data-current-level='13'] [data-level='4'],
+		&[data-current-level='13'] [data-level='5'],
+		&[data-current-level='13'] [data-level='6'],
+		&[data-current-level='13'] [data-level='7'],
+		&[data-current-level='13'] [data-level='8'],
+		&[data-current-level='13'] [data-level='9'],
+		&[data-current-level='13'] [data-level='10'],
+		&[data-current-level='13'] [data-level='11'],
+		&[data-current-level='13'] [data-level='12'],
+		&[data-current-level='13'] [data-level='13'] { display: block; }
+
+		&[data-current-level='14'] [data-level='1'],
+		&[data-current-level='14'] [data-level='2'],
+		&[data-current-level='14'] [data-level='3'],
+		&[data-current-level='14'] [data-level='4'],
+		&[data-current-level='14'] [data-level='5'],
+		&[data-current-level='14'] [data-level='6'],
+		&[data-current-level='14'] [data-level='7'],
+		&[data-current-level='14'] [data-level='8'],
+		&[data-current-level='14'] [data-level='9'],
+		&[data-current-level='14'] [data-level='10'],
+		&[data-current-level='14'] [data-level='11'],
+		&[data-current-level='14'] [data-level='12'],
+		&[data-current-level='14'] [data-level='13'],
+		&[data-current-level='14'] [data-level='14'] { display: block; }
+
+		&[data-current-level='15'] [data-level='1'],
+		&[data-current-level='15'] [data-level='2'],
+		&[data-current-level='15'] [data-level='3'],
+		&[data-current-level='15'] [data-level='4'],
+		&[data-current-level='15'] [data-level='5'],
+		&[data-current-level='15'] [data-level='6'],
+		&[data-current-level='15'] [data-level='7'],
+		&[data-current-level='15'] [data-level='8'],
+		&[data-current-level='15'] [data-level='9'],
+		&[data-current-level='15'] [data-level='10'],
+		&[data-current-level='15'] [data-level='11'],
+		&[data-current-level='15'] [data-level='12'],
+		&[data-current-level='15'] [data-level='13'],
+		&[data-current-level='15'] [data-level='14'],
+		&[data-current-level='15'] [data-level='15'] { display: block; }
+
+		&[data-current-level='16'] [data-level='1'],
+		&[data-current-level='16'] [data-level='2'],
+		&[data-current-level='16'] [data-level='3'],
+		&[data-current-level='16'] [data-level='4'],
+		&[data-current-level='16'] [data-level='5'],
+		&[data-current-level='16'] [data-level='6'],
+		&[data-current-level='16'] [data-level='7'],
+		&[data-current-level='16'] [data-level='8'],
+		&[data-current-level='16'] [data-level='9'],
+		&[data-current-level='16'] [data-level='10'],
+		&[data-current-level='16'] [data-level='11'],
+		&[data-current-level='16'] [data-level='12'],
+		&[data-current-level='16'] [data-level='13'],
+		&[data-current-level='16'] [data-level='14'],
+		&[data-current-level='16'] [data-level='15'],
+		&[data-current-level='16'] [data-level='16'] { display: block; }
+
+		&[data-current-level='17'] [data-level='1'],
+		&[data-current-level='17'] [data-level='2'],
+		&[data-current-level='17'] [data-level='3'],
+		&[data-current-level='17'] [data-level='4'],
+		&[data-current-level='17'] [data-level='5'],
+		&[data-current-level='17'] [data-level='6'],
+		&[data-current-level='17'] [data-level='7'],
+		&[data-current-level='17'] [data-level='8'],
+		&[data-current-level='17'] [data-level='9'],
+		&[data-current-level='17'] [data-level='10'],
+		&[data-current-level='17'] [data-level='11'],
+		&[data-current-level='17'] [data-level='12'],
+		&[data-current-level='17'] [data-level='13'],
+		&[data-current-level='17'] [data-level='14'],
+		&[data-current-level='17'] [data-level='15'],
+		&[data-current-level='17'] [data-level='16'],
+		&[data-current-level='17'] [data-level='17'] { display: block; }
+
+		&[data-current-level='18'] [data-level='1'],
+		&[data-current-level='18'] [data-level='2'],
+		&[data-current-level='18'] [data-level='3'],
+		&[data-current-level='18'] [data-level='4'],
+		&[data-current-level='18'] [data-level='5'],
+		&[data-current-level='18'] [data-level='6'],
+		&[data-current-level='18'] [data-level='7'],
+		&[data-current-level='18'] [data-level='8'],
+		&[data-current-level='18'] [data-level='9'],
+		&[data-current-level='18'] [data-level='10'],
+		&[data-current-level='18'] [data-level='11'],
+		&[data-current-level='18'] [data-level='12'],
+		&[data-current-level='18'] [data-level='13'],
+		&[data-current-level='18'] [data-level='14'],
+		&[data-current-level='18'] [data-level='15'],
+		&[data-current-level='18'] [data-level='16'],
+		&[data-current-level='18'] [data-level='17'],
+		&[data-current-level='18'] [data-level='18'] { display: block; }
+
+		&[data-current-level='19'] [data-level='1'],
+		&[data-current-level='19'] [data-level='2'],
+		&[data-current-level='19'] [data-level='3'],
+		&[data-current-level='19'] [data-level='4'],
+		&[data-current-level='19'] [data-level='5'],
+		&[data-current-level='19'] [data-level='6'],
+		&[data-current-level='19'] [data-level='7'],
+		&[data-current-level='19'] [data-level='8'],
+		&[data-current-level='19'] [data-level='9'],
+		&[data-current-level='19'] [data-level='10'],
+		&[data-current-level='19'] [data-level='11'],
+		&[data-current-level='19'] [data-level='12'],
+		&[data-current-level='19'] [data-level='13'],
+		&[data-current-level='19'] [data-level='14'],
+		&[data-current-level='19'] [data-level='15'],
+		&[data-current-level='19'] [data-level='16'],
+		&[data-current-level='19'] [data-level='17'],
+		&[data-current-level='19'] [data-level='18'],
+		&[data-current-level='19'] [data-level='19'] { display: block; }
+
+		&[data-current-level='20'] [data-level='1'],
+		&[data-current-level='20'] [data-level='2'],
+		&[data-current-level='20'] [data-level='3'],
+		&[data-current-level='20'] [data-level='4'],
+		&[data-current-level='20'] [data-level='5'],
+		&[data-current-level='20'] [data-level='6'],
+		&[data-current-level='20'] [data-level='7'],
+		&[data-current-level='20'] [data-level='8'],
+		&[data-current-level='20'] [data-level='9'],
+		&[data-current-level='20'] [data-level='10'],
+		&[data-current-level='20'] [data-level='11'],
+		&[data-current-level='20'] [data-level='12'],
+		&[data-current-level='20'] [data-level='13'],
+		&[data-current-level='20'] [data-level='14'],
+		&[data-current-level='20'] [data-level='15'],
+		&[data-current-level='20'] [data-level='16'],
+		&[data-current-level='20'] [data-level='17'],
+		&[data-current-level='20'] [data-level='18'],
+		&[data-current-level='20'] [data-level='19'],
+		&[data-current-level='20'] [data-level='20'] { display: block; }
+	}
+}

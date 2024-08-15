@@ -1,5 +1,6 @@
 import { loadCharacter, updateCharacter } from './character.js';
 import { clearValue, loadForms, loadValue, saveStep, updateValue } from './forms.js';
+import { classFormHandling } from './forms/class.js';
 import { raceFormHandling } from './forms/race.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -27,8 +28,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		// TODO: if going back remove previous form fields, if moving forward, add fields
 
-			await updateCharacter(new FormData(form));
-			saveStep(nextForm.id);
+		await updateCharacter(new FormData(form));
+		saveStep(nextForm.id);
 
 		/** @type {HTMLDialogElement} */ (form.parentElement).open = false;
 		nextForm.open = true;
@@ -46,4 +47,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 	});
 
 	raceFormHandling();
+	classFormHandling();
 });
