@@ -29,5 +29,23 @@ export function raceFormHandling() {
 				element.disabled = false;
 			});
 		}
+
+		if (target.matches('select:is([name="skillProficiencies"], [name="toolProficiencies"], [name="languageProficiencies"])')) {
+			const selectedRace = /** @type {HTMLInputElement} */ (document.querySelector('[name="race"]:checked'));
+			const relatedSelects = /** @type {HTMLSelectElement[]} */ ([...document.querySelectorAll(`#race-details-${selectedRace.value} select[name="${target.name}"]`)]);
+			const selectedValues = relatedSelects.map((select) => select.value);
+
+			relatedSelects.forEach((select) => {
+				[...select.options].forEach((option) => {
+					option.disabled = false;
+
+					const optionValue = option.value || option.innerText;
+
+					if (select.value !== optionValue && selectedValues.includes(optionValue)) {
+						option.disabled = true;
+					}
+				});
+			});
+		}
 	});
 }
