@@ -90,70 +90,72 @@
 									You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined
 									by the dragon type, as shown in the table.
 								</p>
-								<table>
-									<thead>
-										<tr>
-											<th>Dragon</th>
-											<th>Damage Type</th>
-											<th>Breath Weapon</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Black</td>
-											<td>Acid</td>
-											<td>5 by 30 ft. line (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Blue</td>
-											<td>Lightning</td>
-											<td>5 by 30 ft. line (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Brass</td>
-											<td>Fire</td>
-											<td>5 by 30 ft. line (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Bronze</td>
-											<td>Lightning</td>
-											<td>5 by 30 ft. line (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Copper</td>
-											<td>Acid</td>
-											<td>5 by 30 ft. line (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Gold</td>
-											<td>Fire</td>
-											<td>15 ft. cone (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Green</td>
-											<td>Poison</td>
-											<td>15 ft. cone (Con. save)</td>
-										</tr>
-										<tr>
-											<td>Red</td>
-											<td>Fire</td>
-											<td>15 ft. cone (Dex. save)</td>
-										</tr>
-										<tr>
-											<td>Silver</td>
-											<td>Cold</td>
-											<td>15 ft. cone (Con. save)</td>
-										</tr>
-										<tr>
-											<td>White</td>
-											<td>Cold</td>
-											<td>15 ft. cone (Con. save)</td>
-										</tr>
-									</tbody>
-								</table>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Dragon</th>
+												<th>Damage Type</th>
+												<th>Breath Weapon</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Black</td>
+												<td>Acid</td>
+												<td>5 by 30 ft. line (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Blue</td>
+												<td>Lightning</td>
+												<td>5 by 30 ft. line (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Brass</td>
+												<td>Fire</td>
+												<td>5 by 30 ft. line (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Bronze</td>
+												<td>Lightning</td>
+												<td>5 by 30 ft. line (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Copper</td>
+												<td>Acid</td>
+												<td>5 by 30 ft. line (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Gold</td>
+												<td>Fire</td>
+												<td>15 ft. cone (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Green</td>
+												<td>Poison</td>
+												<td>15 ft. cone (Con. save)</td>
+											</tr>
+											<tr>
+												<td>Red</td>
+												<td>Fire</td>
+												<td>15 ft. cone (Dex. save)</td>
+											</tr>
+											<tr>
+												<td>Silver</td>
+												<td>Cold</td>
+												<td>15 ft. cone (Con. save)</td>
+											</tr>
+											<tr>
+												<td>White</td>
+												<td>Cold</td>
+												<td>15 ft. cone (Con. save)</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 								<p>
 									<label for="race-dragonborn-ancestry">Select Draconic Ancestry</label>
-									<select id="race-dragonborn-ancestry" name="racialFeatures" required>
+									<select id="race-dragonborn-ancestry" name="racialFeatures" required disabled>
 										<option value="" disabled selected>Select an option</option>
 										<option value='{ "name": "Dragon Ancestry: Black (Acid)", "description": "<p>Your breath weapon does 5 by 30 ft. line (Dex. save)</p>" }'>
 											Black (Acid)
@@ -570,8 +572,32 @@
 								<summary>Skill Versatility</summary>
 								<p>You gain proficiency in two skills of your choice.</p>
 								<p>
-									<label for="race-human-skill-proficiency">Select a skill</label>
-									<select name="skillProficiencies" id="race-human-skill-proficiency" required disabled>
+									<label for="race-half-elf-skill-proficiency1">Select a skill</label>
+									<select name="skillProficiencies" id="race-half-elf-skill-proficiency1" required disabled>
+										<option value="" disabled selected>Select an option</option>
+										<option value="acrobatics">Acrobatics</option>
+										<option value="animal handling">Animal Handling</option>
+										<option value="arcana">Arcana</option>
+										<option value="athletics">Athletics</option>
+										<option value="deception">Deception</option>
+										<option value="history">History</option>
+										<option value="insight">Insight</option>
+										<option value="intimidation">Intimidation</option>
+										<option value="investigation">Investigation</option>
+										<option value="medicine">Medicine</option>
+										<option value="nature">Nature</option>
+										<option value="perception">Perception</option>
+										<option value="performance">Performance</option>
+										<option value="persuasion">Persuasion</option>
+										<option value="religion">Religion</option>
+										<option value="sleight of hand">Sleight of Hand</option>
+										<option value="stealth">Stealth</option>
+										<option value="survival">Survival</option>
+									</select>
+								</p>
+								<p>
+									<label for="race-half-elf-skill-proficiency2">Select a skill</label>
+									<select name="skillProficiencies" id="race-half-elf-skill-proficiency2" required disabled>
 										<option value="" disabled selected>Select an option</option>
 										<option value="acrobatics">Acrobatics</option>
 										<option value="animal handling">Animal Handling</option>
