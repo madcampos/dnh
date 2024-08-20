@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	document.addEventListener('submit', async (evt) => {
 		const form = /** @type {HTMLFormElement} */ (evt.target);
 		const submitterButton = /** @type { HTMLButtonElement} */ (evt.submitter);
-		const nextForm = /** @type {HTMLDialogElement} */ (document.getElementById(submitterButton.dataset.target ?? ''));
+		const nextForm = /** @type {HTMLDialogElement} */ (document.getElementById(submitterButton.dataset['target'] ?? ''));
 
 		// TODO: if going back remove previous form fields, if moving forward, add fields
 

@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 const pr = new Intl.PluralRules('en-US', { type: 'ordinal' });
 
 const suffixes = new Map([

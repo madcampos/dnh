@@ -138,7 +138,7 @@
  * @prop {Spell[]} [spellList]
  */
 
-const LIST_PROPERTIES = [
+const LIST_PROPERTIES = /** @type {const} */ ([
 	'racialFeatures',
 	'languageProficiencies',
 	'toolProficiencies',
@@ -151,9 +151,9 @@ const LIST_PROPERTIES = [
 	'armor',
 	'equipment',
 	'spellList'
-];
+]);
 
-const OBJECT_PROPERTIES = [
+const OBJECT_PROPERTIES = /** @type {const} */ ([
 	'spellLvl0',
 	'spellLvl1',
 	'spellLvl2',
@@ -164,9 +164,9 @@ const OBJECT_PROPERTIES = [
 	'spellLvl7',
 	'spellLvl8',
 	'spellLvl9'
-];
+]);
 
-const NUMERIC_PROPERTIES = [
+const NUMERIC_PROPERTIES = /** @type {const} */ ([
 	'speed',
 	'minAge',
 	'maxAge',
@@ -184,10 +184,11 @@ const NUMERIC_PROPERTIES = [
 	'int',
 	'wis',
 	'cha'
-];
+]);
 
 const character = /** @type {Character} */ ({});
 
+// eslint-disable-next-line complexity
 export function loadCharacter() {
 	character.race = localStorage.getItem('race') ?? '';
 	character.racialFeatures = JSON.parse(localStorage.getItem('racialFeatures') ?? 'null');
@@ -304,7 +305,7 @@ export function getAsi() {
  * @param {File} picture
  * @returns {Promise<string>}
  */
-export function encodePictureToURL(picture) {
+export async function encodePictureToURL(picture) {
 	return new Promise((resolve, reject) => {
 		const fileReader = new FileReader();
 
@@ -313,7 +314,7 @@ export function encodePictureToURL(picture) {
 		}, { once: true });
 
 		fileReader.addEventListener('error', () => {
-			reject(fileReader.error);
+			reject(new Error(fileReader.error?.message));
 		}, { once: true });
 
 		fileReader.readAsDataURL(picture);

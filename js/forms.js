@@ -1,3 +1,14 @@
+/**
+ * @param {string} step
+ */
+export function saveStep(step) {
+	localStorage.setItem('step', step);
+}
+
+export function getCurrentStep() {
+	return localStorage.getItem('step') ?? 'race';
+}
+
 export async function loadForms() {
 	await Promise.all([
 		'02-class.html',
@@ -64,8 +75,8 @@ export function updateValue(element) {
 	}
 
 	if (element instanceof HTMLInputElement && (element.type === 'radio' || element.type === 'checkbox')) {
-		document.querySelectorAll(`input[name="${element.name}"]`).forEach((el) => {
-			localStorage.setItem(`#${el.id}`, 'false');
+		document.querySelectorAll(`input[name="${element.name}"]`).forEach((curEl) => {
+			localStorage.setItem(`#${curEl.id}`, 'false');
 		});
 
 		localStorage.setItem(`#${element.id}`, element.checked ? 'true' : 'false');
@@ -83,15 +94,4 @@ export function clearValue(element) {
 	}
 
 	localStorage.removeItem(`#${element.id}`);
-}
-
-/**
- * @param {string} step
- */
-export function saveStep(step) {
-	localStorage.setItem('step', step);
-}
-
-export function getCurrentStep() {
-	return localStorage.getItem('step') ?? 'race';
 }
