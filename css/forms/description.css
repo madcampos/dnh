@@ -1,0 +1,75 @@
+#description {
+	.background-proficiencies { display: none; }
+
+	#background-proficiencies { display: none; }
+	#background-proficiencies-none { text-align: center; }
+
+	/* dprint-ignore */
+	&:not(:has( input:checked)) #background-proficiencies-none { display: block; }
+	&:has(#background-acolyte:checked) #background-proficiencies-acolyte { display: block; }
+	&:has(#background-criminal:checked) #background-proficiencies-criminal { display: block; }
+	&:has(#background-folk-hero:checked) #background-proficiencies-folk-hero { display: block; }
+	&:has(#background-haunted-one:checked) #background-proficiencies-haunted-one { display: block; }
+	&:has(#background-noble:checked) #background-proficiencies-noble { display: block; }
+	&:has(#background-sage:checked) #background-proficiencies-sage { display: block; }
+	&:has(#background-soldier:checked) #background-proficiencies-soldier { display: block; }
+
+	#personal-characteristics {
+		display: grid;
+		gap: 1rem;
+		grid-auto-flow: column;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+
+		textarea {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	#picture-drop-area {
+		display: grid;
+		height: 6rem;
+		padding: 1rem;
+		place-items: center;
+		width: 100%;
+
+		span { display: none; }
+
+		&.drop {
+			background-color: color-mix(in srgb, gray 30%, canvas);
+			outline: dotted currentColor medium;
+		}
+	}
+
+	#picture-display img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	#description #personal-characteristics {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, auto);
+	}
+}
+
+@media (scripting: enabled) {
+	#description {
+		#background-proficiencies { display: block; }
+		#picture-drop-area span { display: block; }
+
+		#picture {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
+
+		&:has(#picture:focus) #picture-drop-area { border: solid currentColor medium; }
+	}
+}

@@ -2,6 +2,7 @@ import { loadCharacter, updateCharacter } from './character.js';
 import { clearValue, loadForms, loadValue, saveStep, updateValue } from './forms.js';
 import { abilitiesFormHandling } from './forms/abilities.js';
 import { classFormHandling } from './forms/class.js';
+import { descriptionFormHandling } from './forms/description.js';
 import { raceFormHandling } from './forms/race.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -52,4 +53,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 	raceFormHandling();
 	classFormHandling();
 	abilitiesFormHandling();
+	descriptionFormHandling();
 });
