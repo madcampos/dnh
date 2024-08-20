@@ -283,7 +283,12 @@ export async function updateCharacter(formData) {
 			character[name] = Number.parseInt(value);
 			localStorage.setItem(name, value.toString());
 		} else if (name === 'picture') {
-			await updatePicture(/** @type {File} */ (formData.get('picture')));
+			const file = /** @type {File} */ (formData.get('picture'));
+			const mimes = ['image/jpeg', 'image/png', 'image/webp'];
+
+			if (file && mimes.includes(file.type)) {
+				await updatePicture(file);
+			}
 		} else {
 			character[name] = value;
 			localStorage.setItem(name, value);

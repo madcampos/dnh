@@ -46,6 +46,8 @@
 		height: auto;
 		width: 100%;
 	}
+
+	textarea { resize: none; }
 }
 
 @media (max-width: 600px) {
