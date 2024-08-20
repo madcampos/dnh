@@ -1,4 +1,4 @@
-import { character } from '../character.js';
+import { getAsi } from '../character.js';
 
 /**
  * @param {string} ability
@@ -39,7 +39,7 @@ function setAbilityTotal(ability) {
 const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 
 export function abilitiesFormHandling() {
-	character.asi?.forEach((asi) => {
+	getAsi().forEach((asi) => {
 		const asiOutput = getAsiOutput(asi);
 
 		asiOutput.value = `+${(Number.parseInt(asiOutput.value) + 1)}`;
@@ -54,7 +54,15 @@ export function abilitiesFormHandling() {
 		const nextForm = evt.detail;
 
 		if (nextForm === 'abilities') {
-			console.log(character.asi);
+			getAsi().forEach((asi) => {
+				const asiOutput = getAsiOutput(asi);
+
+				asiOutput.value = `+${(Number.parseInt(asiOutput.value) + 1)}`;
+			});
+
+			ABILITIES.forEach((ability) => {
+				setAbilityTotal(ability);
+			});
 		}
 	});
 

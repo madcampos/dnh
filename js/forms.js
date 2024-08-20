@@ -28,8 +28,15 @@ export async function loadForms() {
 	});
 }
 
-export function loadValue(/** @type {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} */ element) {
+/**
+ * @param {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} element
+ */
+export function loadValue(element) {
 	if (!element.id) {
+		return;
+	}
+
+	if (element.type === 'file') {
 		return;
 	}
 
@@ -44,8 +51,15 @@ export function loadValue(/** @type {HTMLInputElement | HTMLSelectElement | HTML
 	}
 }
 
-export function updateValue(/** @type {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} */ element) {
+/**
+ * @param {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} element
+ */
+export function updateValue(element) {
 	if (!element.id) {
+		return;
+	}
+
+	if (element.type === 'file') {
 		return;
 	}
 
@@ -60,7 +74,10 @@ export function updateValue(/** @type {HTMLInputElement | HTMLSelectElement | HT
 	}
 }
 
-export function clearValue(/** @type {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} */ element) {
+/**
+ * @param {HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement} element
+ */
+export function clearValue(element) {
 	if (!element.id) {
 		return;
 	}
@@ -68,7 +85,10 @@ export function clearValue(/** @type {HTMLInputElement | HTMLSelectElement | HTM
 	localStorage.removeItem(`#${element.id}`);
 }
 
-export function saveStep(/** @type {string} */ step) {
+/**
+ * @param {string} step
+ */
+export function saveStep(step) {
 	localStorage.setItem('step', step);
 }
 

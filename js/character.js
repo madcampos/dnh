@@ -186,7 +186,7 @@ const NUMERIC_PROPERTIES = [
 	'cha'
 ];
 
-export const character = /** @type {Character} */ ({});
+const character = /** @type {Character} */ ({});
 
 export function loadCharacter() {
 	character.race = localStorage.getItem('race') ?? '';
@@ -260,7 +260,10 @@ export function loadCharacter() {
 	character.spellList = JSON.parse(localStorage.getItem('spellList') ?? 'null');
 }
 
-export async function updateCharacter(/** @type {FormData} */ formData) {
+/**
+ * @param {FormData} formData
+ */
+export async function updateCharacter(formData) {
 	await Promise.all([...new Set(formData.keys())].map(async (name) => {
 		const value = /** @type {string} */ (formData.get(name));
 
@@ -280,10 +283,7 @@ export async function updateCharacter(/** @type {FormData} */ formData) {
 			character[name] = Number.parseInt(value);
 			localStorage.setItem(name, value.toString());
 		} else if (name === 'picture') {
-			const picture = await encodePictureToURL(/** @type {File} */ (formData.get('picture')));
-
-			character.picture = picture;
-			localStorage.setItem('picture', picture);
+			await updatePicture(/** @type {File} */ (formData.get('picture')));
 		} else {
 			character[name] = value;
 			localStorage.setItem(name, value);
@@ -291,12 +291,20 @@ export async function updateCharacter(/** @type {FormData} */ formData) {
 	}));
 }
 
-export function encodePictureToURL(/** @type {File} */ picture) {
+export function getAsi() {
+	return character.asi ?? [];
+}
+
+/**
+ * @param {File} picture
+ * @returns {Promise<string>}
+ */
+export function encodePictureToURL(picture) {
 	return new Promise((resolve, reject) => {
 		const fileReader = new FileReader();
 
 		fileReader.addEventListener('load', () => {
-			resolve(fileReader.result);
+			resolve(/** @type {string} */ (fileReader.result));
 		}, { once: true });
 
 		fileReader.addEventListener('error', () => {
@@ -305,4 +313,20 @@ export function encodePictureToURL(/** @type {File} */ picture) {
 
 		fileReader.readAsDataURL(picture);
 	});
+}
+
+/**
+ * @param {File} file
+ */
+export async function updatePicture(file) {
+	const picture = await encodePictureToURL(file);
+
+	character.picture = picture;
+	localStorage.setItem('picture', picture);
+
+	return picture;
+}
+
+export function getPicture() {
+	return character.picture ?? '';
 }
