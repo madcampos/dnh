@@ -1,0 +1,23 @@
+#ability-scores {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, auto);
+
+	*:has(> output) {
+		display: none;
+	}
+}
+
+@media (max-width: 750px) {
+	#ability-scores {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, auto);
+	}
+}
+
+@media (scripting: enabled) {
+	#ability-scores *:has(> output) {
+		display: block;
+	}
+}

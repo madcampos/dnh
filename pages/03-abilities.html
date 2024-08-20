@@ -18,7 +18,7 @@
 							<label for="form-progress3">Progress:</label> <progress id="form-progress3" max="6" value="3" aria-label="3 of 6">3 of 6</progress>
 						</div>
 					</header>
-					<fieldset>
+					<fieldset id="ability-scores">
 						<legend>Ability scores</legend>
 
 						<!-- Value suggestions -->
@@ -40,10 +40,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Strength must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-str"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-str"
+									id="asi-str"
+									for="str"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-str">Total:</label>
@@ -65,10 +75,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Dexterity must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-dex"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-dex"
+									id="asi-dex"
+									for="dex"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-dex">Total:</label>
@@ -90,10 +110,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Constitution must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-con"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-con"
+									id="asi-con"
+									for="con"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-con">Total:</label>
@@ -115,10 +145,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Inteligence must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-int"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-int"
+									id="asi-int"
+									for="int"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-int">Total:</label>
@@ -140,10 +180,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Wisdom must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-wis"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-wis"
+									id="asi-wis"
+									for="wis"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-wis">Total:</label>
@@ -165,10 +215,20 @@
 									class="ability-select"
 									required
 									type="number"
-									min="8"
-									max="15"
+									min="1"
+									max="20"
 									list="attribute-values"
 								/>
+								<span class="error-message">Charisma must be between 1 and 20</span>
+							</p>
+							<p>
+								<label for="asi-cha"><abbr title="Ability Score Improvement">ASI</abbr> bonus:</label>
+								<output
+									name="asi-cha"
+									id="asi-cha"
+									for="cha"
+									aria-live="off"
+								>0</output>
 							</p>
 							<p>
 								<label for="base-cha">Total:</label>
