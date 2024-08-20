@@ -255,15 +255,13 @@ export async function updateCharacter() {
 		const value = /** @type {string} */ (formData.get(name));
 
 		if (LIST_PROPERTIES.includes(/** @type {typeof LIST_PROPERTIES[number]} */ (name))) {
-			const oldValue = JSON.parse(localStorage.getItem(name) ?? '[]');
 			const newValue = [...formData.getAll(name)];
 
-			localStorage.setItem(name, JSON.stringify([...oldValue, ...newValue]));
+			localStorage.setItem(name, JSON.stringify(newValue));
 		} else if (OBJECT_PROPERTIES.includes(/** @type {typeof OBJECT_PROPERTIES[number]} */ (name))) {
-			const oldValue = JSON.parse(localStorage.getItem(name) ?? '{}');
 			const newValue = JSON.parse(value);
 
-			localStorage.setItem(name, JSON.stringify({ ...oldValue, ...newValue }));
+			localStorage.setItem(name, JSON.stringify(newValue));
 		} else if (NUMERIC_PROPERTIES.includes(/** @type {typeof NUMERIC_PROPERTIES[number]} */ (name))) {
 			const parsedNumber = Number.parseInt(value);
 

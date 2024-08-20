@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 		const submitterButton = /** @type { HTMLButtonElement} */ (evt.submitter);
 		const nextForm = /** @type {HTMLDialogElement} */ (document.getElementById(submitterButton.dataset['target'] ?? ''));
 
-		// TODO: if going back remove previous form fields, before saving.
-
 		await updateCharacter();
 		saveStep(nextForm.id);
 
