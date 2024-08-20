@@ -18,23 +18,132 @@
 							<label for="form-progress6">Progress:</label> <progress id="form-progress6" max="6" value="6" aria-label="6 of 6">6 of 6</progress>
 						</div>
 					</header>
-					<!-- TODO: add each spell level and spells list -->
-					<fieldset>
-						<legend>Level 0 (Cantrip) Spells</legend>
-						<search hidden>
-							<label for="spell-search0">Filter cantrips:</label>
-							<input type="search" id="spell-search0" />
-							<button type="button">Search</button>
-						</search>
-						<div class="spell-list">
+					<!-- TODO: add spell list -->
+					<!--
+						<dd>
+							<dt data-classes="">
+								<input type="checkbox" name="spell" id="spell-" value="" title="Check to mark it as a known/prepared spell" /> <label for="spell-"></label>
+							</dt>
 							<dd>
-								<dt data-classes="">
-									<input type="checkbox" name="spell" id="spell-" value="" title="Check to mark it as a known/prepared spell" /> <label for="spell-"></label>
-								</dt>
-								<dd></dd>
+								<div class="spell-components"></div>
+								<details>
+									<summary>Spell description <span class="visually-hidden"></span></summary>
+								</details>
 							</dd>
-						</div>
-					</fieldset>
+						</dd>
+					-->
+					<div id="spells-list">
+						<fieldset>
+							<legend>Level 0 (Cantrip) Spells</legend>
+							<search hidden>
+								<label for="spell-search0">Filter cantrips:</label>
+								<input type="search" id="spell-search0" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list0" name="spell-list0" aria-label="Level 0 (Cantrip) Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 1 Spells</legend>
+							<search hidden>
+								<label for="spell-search1">Filter spells:</label>
+								<input type="search" id="spell-search1" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list1" name="spell-list1" aria-label="Level 1 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 2 Spells</legend>
+							<search hidden>
+								<label for="spell-search2">Filter spells:</label>
+								<input type="search" id="spell-search2" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list2" name="spell-list2" aria-label="Level 2 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 3 Spells</legend>
+							<search hidden>
+								<label for="spell-search3">Filter spells:</label>
+								<input type="search" id="spell-search3" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list3" name="spell-list3" aria-label="Level 3 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 4 Spells</legend>
+							<search hidden>
+								<label for="spell-search4">Filter spells:</label>
+								<input type="search" id="spell-search4" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list4" name="spell-list4" aria-label="Level 4 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 5 Spells</legend>
+							<search hidden>
+								<label for="spell-search5">Filter spells:</label>
+								<input type="search" id="spell-search5" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list5" name="spell-list5" aria-label="Level 5 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 6 Spells</legend>
+							<search hidden>
+								<label for="spell-search6">Filter spells:</label>
+								<input type="search" id="spell-search6" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list6" name="spell-list6" aria-label="Level 6 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 7 Spells</legend>
+							<search hidden>
+								<label for="spell-search7">Filter spells:</label>
+								<input type="search" id="spell-search7" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list7" name="spell-list7" aria-label="Level 7 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 8 Spells</legend>
+							<search hidden>
+								<label for="spell-search8">Filter spells:</label>
+								<input type="search" id="spell-search8" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list8" name="spell-list8" aria-label="Level 8 Spell List"></textarea>
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Level 9 Spells</legend>
+							<search hidden>
+								<label for="spell-search9">Filter spells:</label>
+								<input type="search" id="spell-search9" />
+								<button type="button">Search</button>
+							</search>
+							<div class="spell-list">
+								<textarea rows="20" cols="70" id="spell-list9" name="spell-list9" aria-label="Level 9 Spell List"></textarea>
+							</div>
+						</fieldset>
+					</div>
 					<footer>
 						<nav aria-label="Form Actions">
 							<button type="submit" class="prev-button" formaction="./05-equipment.html" data-target="equipment">Previous</button>

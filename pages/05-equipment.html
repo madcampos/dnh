@@ -28,7 +28,9 @@
 								name="pp"
 								id="pp"
 								min="0"
+								value="0"
 							/>
+							<span class="error-message">Money can't be negative.</span>
 						</p>
 						<p>
 							<label for="gp">Gold Pieces (<abbr>GP</abbr>)</label>
@@ -38,7 +40,9 @@
 								name="gp"
 								id="gp"
 								min="0"
+								value="0"
 							/>
+							<span class="error-message">Money can't be negative.</span>
 						</p>
 						<p>
 							<label for="ep">Electrum Pieces (<abbr>EP</abbr>)</label>
@@ -48,7 +52,9 @@
 								name="ep"
 								id="ep"
 								min="0"
+								value="0"
 							/>
+							<span class="error-message">Money can't be negative.</span>
 						</p>
 						<p>
 							<label for="sp">Silve Pieces (<abbr>SP</abbr>)</label>
@@ -58,7 +64,9 @@
 								name="sp"
 								id="sp"
 								min="0"
+								value="0"
 							/>
+							<span class="error-message">Money can't be negative.</span>
 						</p>
 						<p>
 							<label for="cp">Copper Pieces (<abbr>CP</abbr>)</label>
@@ -67,11 +75,14 @@
 								name="cp"
 								id="cp"
 								min="0"
+								value="0"
 							/>
+							<span class="error-message">Money can't be negative.</span>
 						</p>
 					</fieldset>
 					<fieldset>
 						<legend>Gear</legend>
+						<!-- TODO: add equipment list -->
 						<textarea rows="20" cols="70" id="equipament-list" name="equipament" aria-label="Equipament list"></textarea>
 					</fieldset>
 					<fieldset id="total-weight">
@@ -82,7 +93,7 @@
 							optimum="50"
 							high="66"
 							max="100"
-							value="50"
+							value="0"
 						></meter>
 					</fieldset>
 					<footer>
