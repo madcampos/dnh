@@ -1,0 +1,19 @@
+#equipment {
+	#total-weight { display: none; }
+	#total-weight meter { width: 100%; }
+
+	#currency {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+
+		input { width: 8ch; }
+		small, label { display: block; }
+	}
+
+	textarea {
+		min-height: 10rem;
+		resize: vertical;
+		width: 100%;
+	}
+}

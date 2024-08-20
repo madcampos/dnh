@@ -18,11 +18,11 @@
 							<label for="form-progress5">Progress:</label> <progress id="form-progress5" max="6" value="5" aria-label="5 of 6">5 of 6</progress>
 						</div>
 					</header>
-					<fieldset>
+					<fieldset id="currency">
 						<legend>Currency</legend>
 						<p>
 							<label for="pp">Platium Pieces (<abbr>PP</abbr>)</label>
-							<span>1 <abbr>PP</abbr> = 10 <abbr>GP</abbr></span>
+							<small>1 <abbr>PP</abbr> = 10 <abbr>GP</abbr></small>
 							<input
 								type="number"
 								name="pp"
@@ -32,7 +32,7 @@
 						</p>
 						<p>
 							<label for="gp">Gold Pieces (<abbr>GP</abbr>)</label>
-							<span>1 <abbr>GP</abbr> = 10 <abbr>SP</abbr></span>
+							<small>1 <abbr>GP</abbr> = 10 <abbr>SP</abbr></small>
 							<input
 								type="number"
 								name="gp"
@@ -42,7 +42,7 @@
 						</p>
 						<p>
 							<label for="ep">Electrum Pieces (<abbr>EP</abbr>)</label>
-							<span>1 <abbr>EP</abbr> = 5 <abbr>SP</abbr></span>
+							<small>1 <abbr>EP</abbr> = 5 <abbr>SP</abbr></small>
 							<input
 								type="number"
 								name="ep"
@@ -52,7 +52,7 @@
 						</p>
 						<p>
 							<label for="sp">Silve Pieces (<abbr>SP</abbr>)</label>
-							<span>1 <abbr>SP</abbr> = 10 <abbr>CP</abbr></span>
+							<small>1 <abbr>SP</abbr> = 10 <abbr>CP</abbr></small>
 							<input
 								type="number"
 								name="sp"
@@ -72,11 +72,9 @@
 					</fieldset>
 					<fieldset>
 						<legend>Gear</legend>
-						<!-- TODO: add web component with JS -->
-						<!-- TODO: add fields that affect character, like AC bonus -->
 						<textarea rows="20" cols="70" id="equipament-list" name="equipament" aria-label="Equipament list"></textarea>
 					</fieldset>
-					<fieldset>
+					<fieldset id="total-weight">
 						<legend>Total Weight</legend>
 						<meter
 							min="0"
