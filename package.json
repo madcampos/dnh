@@ -4,5 +4,11 @@
 	"description": "Dungeons and HTML",
 	"main": "index.html",
 	"author": "madcampos",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^7.17.0",
+		"@typescript-eslint/parser": "^7.17.0",
+		"eslint": "^8.57.0",
+		"typescript": "^5.5.4"
+	}
 }
