@@ -2,7 +2,7 @@
  * @param {HTMLSelectElement | HTMLInputElement} target
  * @param {string} containerSelector
  */
-export function disableSelectedProficiency(target, containerSelector){
+export function disableSelectedProficiency(target, containerSelector) {
 	if (target.matches('select:is([name="skillProficiencies"], [name="toolProficiencies"], [name="languageProficiencies"])')) {
 		const relatedSelects = /** @type {HTMLSelectElement[]} */ ([...document.querySelectorAll(`${containerSelector} select[name="${target.name}"]`)]);
 		const selectedValues = relatedSelects.map((select) => select.value);
@@ -25,27 +25,26 @@ export function disableSelectedProficiency(target, containerSelector){
 	}
 }
 
-
 /**
  * @param {string} baseSelector
  */
-export function enableChildInputs(baseSelector){
+export function enableChildInputs(baseSelector) {
 	// @ts-expect-error
-		/** @type {(HTMLInputElement | HTMLSelectElement)[]} */ (
-			document.querySelectorAll(`${baseSelector} :is(input, select)`)
-		).forEach((element) => {
-			element.disabled = false;
-		});
+	/** @type {(HTMLInputElement | HTMLSelectElement)[]} */ (
+		document.querySelectorAll(`${baseSelector} :is(input, select)`)
+	).forEach((element) => {
+		element.disabled = false;
+	});
 }
 
 /**
  * @param {string} baseSelector
  */
-export function disableChildInputs(baseSelector){
+export function disableChildInputs(baseSelector) {
 	// @ts-expect-error
-		/** @type {(HTMLInputElement | HTMLSelectElement)[]} */ (
-			document.querySelectorAll(`${baseSelector} :is(input, select)`)
-		).forEach((element) => {
-			element.disabled = true;
-		});
+	/** @type {(HTMLInputElement | HTMLSelectElement)[]} */ (
+		document.querySelectorAll(`${baseSelector} :is(input, select)`)
+	).forEach((element) => {
+		element.disabled = true;
+	});
 }

@@ -76,15 +76,15 @@ label:has(~ :is(input, select):user-invalid) {
 }
 
 .error-message {
+	border: solid currentColor medium;
+	border-radius: 0.5rem;
 	display: none;
+	font-weight: bold;
 	margin: 0.5rem;
-	padding: 0.5rem;
-	width: 100%;
 	max-width: fit-content;
 	min-width: min-content;
-	border: solid currentColor medium;
-	border-radius: 0.5rem;;
-	font-weight: bold;
+	padding: 0.5rem;
+	width: 100%;
 }
 
 :is(input, select):user-invalid ~ .error-message {

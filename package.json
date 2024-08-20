@@ -1,8 +1,8 @@
 {
-  "name": "dnh",
-  "version": "1.0.0",
-  "description": "Dungeons and HTML",
-  "main": "index.html",
-  "author": "madcampos",
-  "license": "MIT"
+	"name": "dnh",
+	"version": "1.0.0",
+	"description": "Dungeons and HTML",
+	"main": "index.html",
+	"author": "madcampos",
+	"license": "MIT"
 }

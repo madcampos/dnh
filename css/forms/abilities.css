@@ -1,12 +1,11 @@
 #ability-scores {
 	display: grid;
+	gap: 1rem;
 	grid-auto-flow: column;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(3, auto);
 
-	*:has(> output) {
-		display: none;
-	}
+	*:has(> output) { display: none; }
 }
 
 @media (max-width: 750px) {
@@ -16,8 +15,4 @@
 	}
 }
 
-@media (scripting: enabled) {
-	#ability-scores *:has(> output) {
-		display: block;
-	}
-}
+@media (scripting: enabled) { #ability-scores *:has(> output) { display: block; } }
