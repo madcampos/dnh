@@ -53,9 +53,10 @@ export async function generateClasses() {
 			classFeaturesMap.set(level, [...classFeaturesMap.get(level), featureName]);
 		});
 
-		const weaponProficiencies = charClass.startingProficiencies.weapons?.map((item) => `<input type="hidden" name="weaponProficiency" value="${item}" disabled/>`).join('') ??
+		const weaponProficiencies = charClass.startingProficiencies.weapons?.map((item) => `<input type="hidden" name="weaponProficiencies" value="${item}" disabled/>`).join('') ??
 			'';
-		const armorProficiencies = charClass.startingProficiencies.armor?.map((item) => `<input type="hidden" name="weaponProficiency" value="${item}" disabled/>`).join('') ?? '';
+		const armorProficiencies = charClass.startingProficiencies.armor?.map((item) => `<input type="hidden" name="weaponProficiencies" value="${item}" disabled/>`).join('') ??
+			'';
 
 		const skillProficiencies = charClass.startingProficiencies.skills?.map((proficiency, index) => {
 			let results = '';
