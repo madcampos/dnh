@@ -24,8 +24,10 @@
 	&:has(#class-sorcerer:checked) #class-features-sorcerer { display: block; }
 	&:has(#class-warlock:checked) #class-features-warlock { display: block; }
 	&:has(#class-wizard:checked) #class-features-wizard { display: block; }
+}
 
-	&[data-js-update-level] {
+@media (scripting: enabled) {
+	#class {
 		[data-level] { display: none; }
 
 		&[data-current-level='1'] [data-level='1'] { display: block; }

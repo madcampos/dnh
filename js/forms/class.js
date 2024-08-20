@@ -17,7 +17,6 @@ function getSelectedClass() {
 export function classFormHandling() {
 	const classContainer = /** @type {HTMLDialogElement} */ (document.querySelector('#class'));
 
-	classContainer.dataset.jsUpdateLevel = '';
 	classContainer.dataset.currentLevel = getCurrentLevel().toString();
 	enableChildInputs(`#class-features-${getSelectedClass()} :is(${getLevelSelector()})`);
 
