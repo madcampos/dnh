@@ -8,7 +8,7 @@
 	*:has(> output) { display: none; }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 50rem) {
 	#ability-scores {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(6, auto);
