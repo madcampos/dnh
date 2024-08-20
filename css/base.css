@@ -1,7 +1,7 @@
 :root {
 	color-scheme: dark light;
 	font-family: system-ui, sans-serif;
-	font-size: 20px;
+	font-size: 1.3rem;
 }
 
 :where(*, *::after, *::before) {
