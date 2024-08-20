@@ -39,23 +39,57 @@ summary {
 }
 
 /* dprint-ignore */
-details:has( :invalid) summary {
-	color: red;
+details:has( :not(:focus):invalid) summary {
+	color: goldenrod;
 	font-weight: bold;
 
 	&::after { content: ' (Needs attention ⚠️)'; }
 }
 
-label:has(~ :is(input, select):invalid) {
+label:has(~ :is(input, select):invalid:not(:focus):not(:user-invalid)) {
+	color: goldenrod;
+	font-weight: bold;
+
+	&::before { content: '⚠️ '; }
+}
+
+:is(input, select):invalid:not(:focus):not(:user-invalid) {
+	color: goldenrod;
+	font-weight: bold;
+}
+
+:is(input, select):invalid ~ .error-message {
+	color: goldenrod;
+	display: block;
+}
+
+label:has(~ :is(input, select):user-invalid) {
 	color: red;
 	font-weight: bold;
 
 	&::before { content: '⚠️ '; }
 }
 
-:is(input, select):invalid {
+:is(input, select):user-invalid {
 	color: red;
 	font-weight: bold;
+}
+
+.error-message {
+	display: none;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 100%;
+	max-width: fit-content;
+	min-width: min-content;
+	border: solid currentColor medium;
+	border-radius: 0.5rem;;
+	font-weight: bold;
+}
+
+:is(input, select):user-invalid ~ .error-message {
+	color: red;
+	display: block;
 }
 
 header div { text-align: center; }
