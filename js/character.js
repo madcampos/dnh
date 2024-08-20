@@ -186,119 +186,31 @@ const NUMERIC_PROPERTIES = /** @type {const} */ ([
 	'cha'
 ]);
 
-const character = /** @type {Character} */ ({});
+function getAllForms() {
+	const formelectors = [
+		'#race form',
+		'#class form',
+		'#abilities form',
+		'#description form',
+		'#equipment form',
+		'#spells form'
+	];
 
-// eslint-disable-next-line complexity
-export function loadCharacter() {
-	character.race = localStorage.getItem('race') ?? '';
-	character.racialFeatures = JSON.parse(localStorage.getItem('racialFeatures') ?? 'null');
-	character.speed = Number.parseInt(localStorage.getItem('speed') ?? '0');
-	character.size = /** @type {Size | null} */ (localStorage.getItem('size')) ?? 'medium';
-	character.minAge = Number.parseInt(localStorage.getItem('minAge') ?? '0');
-	character.maxAge = Number.parseInt(localStorage.getItem('maxAge') ?? '0');
-	character.minHeight = Number.parseInt(localStorage.getItem('minHeight') ?? '0');
-	character.maxHeight = Number.parseInt(localStorage.getItem('maxHeight') ?? '0');
-	character.minWeight = Number.parseInt(localStorage.getItem('minWeight') ?? '0');
-	character.maxWeight = Number.parseInt(localStorage.getItem('maxWeight') ?? '0');
+	const combinedFormData = formelectors.reduce((formData, id) => {
+		const form = /** @type {HTMLFormElement} */ (document.querySelector(id));
+		const currentFormData = new FormData(form);
 
-	character.languageProficiencies = JSON.parse(localStorage.getItem('languageProficiencies') ?? 'null');
-	character.toolProficiencies = JSON.parse(localStorage.getItem('toolProficiencies') ?? 'null');
-	character.skillProficiencies = JSON.parse(localStorage.getItem('skillProficiencies') ?? 'null');
-	character.weaponProficiencies = JSON.parse(localStorage.getItem('weaponProficiencies') ?? 'null');
-	character.armorProficiencies = JSON.parse(localStorage.getItem('armorProficiencies') ?? 'null');
+		currentFormData.forEach((value, key) => {
+			formData.append(key, value);
+		});
 
-	character.class = localStorage.getItem('class') ?? '';
-	character.classFeatures = JSON.parse(localStorage.getItem('classFeatures') ?? '[]');
-	character.asi = JSON.parse(localStorage.getItem('asi') ?? 'null');
+		return formData;
+	}, new FormData());
 
-	character.rage = localStorage.getItem('rage') ? Number.parseInt(localStorage.getItem('rage') ?? '0') : undefined;
-	character.kiPoints = localStorage.getItem('kiPoints') ? Number.parseInt(localStorage.getItem('kiPoints') ?? '0') : undefined;
-	character.martialArts = localStorage.getItem('martialArts') ?? undefined;
-	character.sneakAttack = localStorage.getItem('sneakAttack') ?? undefined;
-	character.sorceryPoints = localStorage.getItem('sorceryPoints') ? Number.parseInt(localStorage.getItem('sorceryPoints') ?? '0') : undefined;
-	character.invocationsKnown = localStorage.getItem('invocationsKnown') ? Number.parseInt(localStorage.getItem('invocationsKnown') ?? '0') : undefined;
-
-	character.str = Number.parseInt(localStorage.getItem('str') ?? '0');
-	character.dex = Number.parseInt(localStorage.getItem('dex') ?? '0');
-	character.con = Number.parseInt(localStorage.getItem('con') ?? '0');
-	character.int = Number.parseInt(localStorage.getItem('int') ?? '0');
-	character.wis = Number.parseInt(localStorage.getItem('wis') ?? '0');
-	character.cha = Number.parseInt(localStorage.getItem('cha') ?? '0');
-
-	character.name = localStorage.getItem('name') ?? '';
-	character.playerName = localStorage.getItem('playerName') ?? '';
-	character.alignment = localStorage.getItem('alignment') ?? '';
-	character.deity = localStorage.getItem('deity') ?? undefined;
-	character.picture = localStorage.getItem('picture') ?? undefined;
-	character.hair = localStorage.getItem('hair') ?? undefined;
-	character.skin = localStorage.getItem('skin') ?? undefined;
-	character.eyes = localStorage.getItem('eyes') ?? undefined;
-	character.height = localStorage.getItem('height') ?? undefined;
-	character.weight = localStorage.getItem('weight') ?? undefined;
-	character.age = localStorage.getItem('age') ?? undefined;
-	character.pronouns = localStorage.getItem('pronouns') ?? undefined;
-
-	character.background = localStorage.getItem('background') ?? '';
-	character.traits = localStorage.getItem('traits') ?? undefined;
-	character.ideals = localStorage.getItem('ideals') ?? undefined;
-	character.bonds = localStorage.getItem('bonds') ?? undefined;
-	character.flaws = localStorage.getItem('flaws') ?? undefined;
-
-	character.weapons = JSON.parse(localStorage.getItem('weapons') ?? 'null');
-	character.armor = JSON.parse(localStorage.getItem('armor') ?? 'null');
-	character.equipment = JSON.parse(localStorage.getItem('equipment') ?? 'null');
-
-	character.spellLvl0 = JSON.parse(localStorage.getItem('spellLvl0') ?? 'null');
-	character.spellLvl1 = JSON.parse(localStorage.getItem('spellLvl1') ?? 'null');
-	character.spellLvl2 = JSON.parse(localStorage.getItem('spellLvl2') ?? 'null');
-	character.spellLvl3 = JSON.parse(localStorage.getItem('spellLvl3') ?? 'null');
-	character.spellLvl4 = JSON.parse(localStorage.getItem('spellLvl4') ?? 'null');
-	character.spellLvl5 = JSON.parse(localStorage.getItem('spellLvl5') ?? 'null');
-	character.spellLvl6 = JSON.parse(localStorage.getItem('spellLvl6') ?? 'null');
-	character.spellLvl7 = JSON.parse(localStorage.getItem('spellLvl7') ?? 'null');
-	character.spellLvl8 = JSON.parse(localStorage.getItem('spellLvl8') ?? 'null');
-	character.spellLvl9 = JSON.parse(localStorage.getItem('spellLvl9') ?? 'null');
-	character.spellList = JSON.parse(localStorage.getItem('spellList') ?? 'null');
+	return combinedFormData;
 }
-
-/**
- * @param {FormData} formData
- */
-export async function updateCharacter(formData) {
-	await Promise.all([...new Set(formData.keys())].map(async (name) => {
-		const value = /** @type {string} */ (formData.get(name));
-
-		if (LIST_PROPERTIES.includes(name)) {
-			const oldValue = character[name] ?? [];
-			const newValue = [...oldValue, ...formData.getAll(name)];
-
-			character[name] = newValue;
-			localStorage.setItem(name, JSON.stringify(newValue));
-		} else if (OBJECT_PROPERTIES.includes(name)) {
-			const oldValue = character[name] ?? {};
-			const newValue = { ...oldValue, ...JSON.parse(value) };
-
-			character[name] = newValue;
-			localStorage.setItem(name, JSON.stringify(newValue));
-		} else if (NUMERIC_PROPERTIES.includes(name)) {
-			character[name] = Number.parseInt(value);
-			localStorage.setItem(name, value.toString());
-		} else if (name === 'picture') {
-			const file = /** @type {File} */ (formData.get('picture'));
-			const mimes = ['image/jpeg', 'image/png', 'image/webp'];
-
-			if (file && mimes.includes(file.type)) {
-				await updatePicture(file);
-			}
-		} else {
-			character[name] = value;
-			localStorage.setItem(name, value);
-		}
-	}));
-}
-
 export function getAsi() {
-	return character.asi ?? [];
+	return /** @type {string[]} */ ([...getAllForms().getAll('asi')]);
 }
 
 /**
@@ -327,12 +239,46 @@ export async function encodePictureToURL(picture) {
 export async function updatePicture(file) {
 	const picture = await encodePictureToURL(file);
 
-	character.picture = picture;
 	localStorage.setItem('picture', picture);
 
 	return picture;
 }
 
 export function getPicture() {
-	return character.picture ?? '';
+	return localStorage.getItem('picture') ?? '';
+}
+
+export async function updateCharacter() {
+	const formData = getAllForms();
+
+	await Promise.all([...new Set(formData.keys())].map(async (name) => {
+		const value = /** @type {string} */ (formData.get(name));
+
+		if (LIST_PROPERTIES.includes(/** @type {typeof LIST_PROPERTIES[number]} */ (name))) {
+			const oldValue = JSON.parse(localStorage.getItem(name) ?? '[]');
+			const newValue = [...formData.getAll(name)];
+
+			localStorage.setItem(name, JSON.stringify([...oldValue, ...newValue]));
+		} else if (OBJECT_PROPERTIES.includes(/** @type {typeof OBJECT_PROPERTIES[number]} */ (name))) {
+			const oldValue = JSON.parse(localStorage.getItem(name) ?? '{}');
+			const newValue = JSON.parse(value);
+
+			localStorage.setItem(name, JSON.stringify({ ...oldValue, ...newValue }));
+		} else if (NUMERIC_PROPERTIES.includes(/** @type {typeof NUMERIC_PROPERTIES[number]} */ (name))) {
+			const parsedNumber = Number.parseInt(value);
+
+			if (!Number.isNaN(parsedNumber)) {
+				localStorage.setItem(name, value.toString());
+			}
+		} else if (name === 'picture') {
+			const file = /** @type {File} */ (formData.get('picture'));
+			const mimes = ['image/jpeg', 'image/png', 'image/webp'];
+
+			if (file && mimes.includes(file.type)) {
+				await updatePicture(file);
+			}
+		} else {
+			localStorage.setItem(name, value);
+		}
+	}));
 }

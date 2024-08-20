@@ -1,4 +1,4 @@
-import { loadCharacter, updateCharacter } from './character.js';
+import { updateCharacter } from './character.js';
 import { clearValue, loadForms, loadValue, saveStep, updateValue } from './forms.js';
 import { abilitiesFormHandling } from './forms/abilities.js';
 import { classFormHandling } from './forms/class.js';
@@ -6,7 +6,6 @@ import { descriptionFormHandling } from './forms/description.js';
 import { raceFormHandling } from './forms/race.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-	loadCharacter();
 	await loadForms();
 
 	/** @type {NodeListOf<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>} */ (
@@ -28,9 +27,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 		const submitterButton = /** @type { HTMLButtonElement} */ (evt.submitter);
 		const nextForm = /** @type {HTMLDialogElement} */ (document.getElementById(submitterButton.dataset['target'] ?? ''));
 
-		// TODO: if going back remove previous form fields, if moving forward, add fields
+		// TODO: if going back remove previous form fields, before saving.
 
-		await updateCharacter(new FormData(form));
+		await updateCharacter();
 		saveStep(nextForm.id);
 
 		/** @type {HTMLDialogElement} */ (form.parentElement).open = false;
