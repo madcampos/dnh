@@ -15,7 +15,6 @@ export function raceFormHandling() {
 			enableChildInputs(`#race-details-${target.value}`);
 		}
 
-		const selectedRace = /** @type {HTMLInputElement} */ (document.querySelector('[name="race"]:checked'));
-		disableSelectedProficiency(target, `#race-details-${selectedRace.value}`);
+		disableSelectedProficiency(target, `#race-details-${getSelectedRace()}`);
 	});
 }
