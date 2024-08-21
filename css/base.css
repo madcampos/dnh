@@ -38,6 +38,11 @@ summary {
 	padding: 0.5rem 1rem;
 }
 
+summary:focus {
+	background-color: canvastext;
+	color: canvas;
+}
+
 /* dprint-ignore */
 details:has( :not(:focus):invalid) summary {
 	color: goldenrod;

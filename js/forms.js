@@ -10,7 +10,7 @@ export function getCurrentStep() {
 }
 
 export async function loadForms() {
-	await Promise.all([
+	(await Promise.all([
 		'02-class.html',
 		'03-abilities.html',
 		'04-description.html',
@@ -22,10 +22,11 @@ export async function loadForms() {
 		const text = await response.text();
 		const parser = new DOMParser();
 		const newDocument = parser.parseFromString(text, 'text/html');
-		const formDialog = /** @type {HTMLDialogElement} */ (newDocument.querySelector('dialog'));
 
-		document.body.insertAdjacentElement('beforeend', formDialog);
-	}));
+		return /** @type {HTMLDialogElement} */ (newDocument.querySelector('dialog'));
+	}))).forEach((dialog) => {
+		document.body.insertAdjacentElement('beforeend', dialog);
+	});
 
 	// Update all dialogs to be closed and all forms to use dialogs as targets.
 	document.querySelectorAll('dialog').forEach((dialog) => {

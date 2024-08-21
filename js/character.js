@@ -84,6 +84,7 @@
  * @prop {string[]} [weaponProficiencies]
  * @prop {string[]} [armorProficiencies]
  *
+ * @prop {number} level
  * @prop {string} class
  * @prop {ClassFeature[]} classFeatures
  * @prop {Attribute[]} [asi]
@@ -121,6 +122,12 @@
  * @prop {string} [bonds]
  * @prop {string} [flaws]
  *
+ * @prop {number} pp
+ * @prop {number} gp
+ * @prop {number} ep
+ * @prop {number} sp
+ * @prop {number} cp
+ *
  * @prop {Weapon[]} weapons
  * @prop {Armor[]} armor
  * @prop {Equipment[]} equipment
@@ -154,16 +161,16 @@ const LIST_PROPERTIES = /** @type {const} */ ([
 ]);
 
 const OBJECT_PROPERTIES = /** @type {const} */ ([
-	'spellLvl0',
-	'spellLvl1',
-	'spellLvl2',
-	'spellLvl3',
-	'spellLvl4',
-	'spellLvl5',
-	'spellLvl6',
-	'spellLvl7',
-	'spellLvl8',
-	'spellLvl9'
+	// 'spellLvl0',
+	// 'spellLvl1',
+	// 'spellLvl2',
+	// 'spellLvl3',
+	// 'spellLvl4',
+	// 'spellLvl5',
+	// 'spellLvl6',
+	// 'spellLvl7',
+	// 'spellLvl8',
+	// 'spellLvl9'
 ]);
 
 const NUMERIC_PROPERTIES = /** @type {const} */ ([
@@ -186,7 +193,7 @@ const NUMERIC_PROPERTIES = /** @type {const} */ ([
 	'cha'
 ]);
 
-function getAllForms() {
+export function getAllForms() {
 	const formelectors = [
 		'#race form',
 		'#class form',
@@ -279,4 +286,49 @@ export async function updateCharacter() {
 			localStorage.setItem(name, value);
 		}
 	}));
+}
+
+export function getCharacterObject() {
+	const formData = getAllForms();
+	const character = /** @type {Character} */ ({});
+
+	[...formData.keys()].forEach((name) => {
+		const value = /** @type {string} */ (formData.get(name));
+
+		if (LIST_PROPERTIES.includes(/** @type {typeof LIST_PROPERTIES[number]} */ (name))) {
+			const newValue = [...formData.getAll(name)].map((currentValue) => {
+				try {
+					return JSON.parse(/** @type {string} */ (currentValue));
+				} catch {
+					return currentValue;
+				}
+			});
+
+			// @ts-expect-error
+			character[name] = newValue;
+		} else if (OBJECT_PROPERTIES.includes(/** @type {typeof OBJECT_PROPERTIES[number]} */ (name))) {
+			const newValue = JSON.parse(value);
+
+			// @ts-expect-error
+			character[name] = newValue;
+		} else if (NUMERIC_PROPERTIES.includes(/** @type {typeof NUMERIC_PROPERTIES[number]} */ (name))) {
+			const parsedNumber = Number.parseInt(value);
+
+			if (!Number.isNaN(parsedNumber)) {
+				// @ts-expect-error
+				character[name] = parsedNumber;
+			}
+		} else if (name === 'picture') {
+			const picture = getPicture();
+
+			if (picture) {
+				character.picture = picture;
+			}
+		} else {
+			// @ts-expect-error
+			character[name] = value;
+		}
+	});
+
+	return character;
 }
