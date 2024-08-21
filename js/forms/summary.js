@@ -114,6 +114,12 @@ function loadSummary() {
 	const formData = getAllForms();
 	const modifiers = /** @type {Record<string, number>} */ ({});
 
+	document.querySelectorAll(
+		'output:is([name="languageProficiencies"], [name="toolProficiencies"], [name="weaponProficiencies"], [name="armorProficiencies"], [name="racialFeatures"], [name="classFeatures"])'
+	).forEach((output) => {
+		output.replaceChildren('');
+	});
+
 	[...formData.entries()].forEach(([key, value]) => {
 		const output = /** @type {HTMLOutputElement | null} */ (document.querySelector(`#summary output[name="${key}"]`));
 

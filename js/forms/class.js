@@ -35,7 +35,7 @@ export function classFormHandling() {
 
 		if (target.matches('[name="class"], [name="level"]')) {
 			disableChildInputs('.class-features');
-			enableChildInputs(`#class-features-${target.value} :is(${getLevelSelector()})`);
+			enableChildInputs(`#class-features-${getSelectedClass()} :is(${getLevelSelector()})`);
 		}
 
 		disableSelectedProficiency(target, `#class-features-${getSelectedClass()}`);
