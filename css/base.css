@@ -18,12 +18,38 @@ dialog {
 	width: calc(100% - 2rem);
 }
 
-input, select, button, textarea { font-size: inherit; }
-
-input, select, textarea {
+input, select, button, textarea {
+	background-color: canvas;
 	border: solid currentColor medium;
 	border-radius: 0.5rem;
+	font-size: inherit;
+	padding-block: 0.1rem;
+	padding-inline: 0.4rem;
+
+	&:focus {
+		background-color: canvastext;
+		color: canvas;
+		outline: solid medium canvastext;
+	}
+
+	&:hover { outline: solid medium highlight; }
+
+	&:disabled { display: none; }
+	label:has(+ &:disabled), &:disabled + label { display: none; }
 }
+
+label:has(+ :is(input, select, textarea):focus), :is(input, select, textarea):focus + label {
+	color: canvastext;
+	font-style: italic;
+}
+
+button:active {
+	background-color: mark;
+	color: marktext;
+	outline: solid medium mark;
+}
+
+select option[disabled] { display: none; }
 
 fieldset {
 	border: solid medium currentColor;
@@ -98,6 +124,8 @@ label:has(~ :is(input, select):user-invalid) {
 }
 
 header div { text-align: center; }
+
+footer { margin-block-start: 1rem; }
 
 .table-wrapper {
 	container-type: inline-size;

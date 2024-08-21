@@ -14,6 +14,10 @@ function displayPicture(dataUrl) {
 		return;
 	}
 
+	const pictureInput = /** @type {HTMLInputElement} */ (document.querySelector('#picture-drop-area input'));
+
+	pictureInput.required = false;
+
 	const pictureDisplay = /** @type {HTMLOutputElement} */ (document.querySelector('#picture-display'));
 	const image = document.createElement('img');
 

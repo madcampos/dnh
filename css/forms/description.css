@@ -30,17 +30,49 @@
 	}
 
 	#picture-drop-area {
+		align-items: stretch;
 		display: grid;
-		height: 6rem;
-		padding: 1rem;
-		place-items: center;
+		gap: 1rem;
+		grid-template-areas:
+			'input'
+			'output';
+		grid-template-columns: 1fr;
+		grid-template-rows: 6rem auto;
+		justify-items: stretch;
 		width: 100%;
 
-		span { display: none; }
+		label, input { grid-area: input; }
+		output { grid-area: output; }
 
-		&.drop {
-			background-color: color-mix(in srgb, gray 30%, canvas);
-			outline: dotted currentColor medium;
+		label {
+			border: solid medium currentColor;
+			border-radius: 0.5rem;
+			display: grid;
+			place-content: center;
+			text-align: center;
+		}
+
+		label:has(+ input:focus) {
+			background-color: canvastext;
+			color: canvas;
+			font-style: normal;
+			outline: solid medium canvastext;
+		}
+
+		label:has(+ input:hover) { outline: solid medium highlight; }
+
+		input {
+			opacity: 0;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		input:valid { opacity: 1; }
+
+		&.drop label {
+			background-color: highlight;
+			color: highlighttext;
+			outline: dotted highlight medium;
 		}
 	}
 
@@ -62,18 +94,6 @@
 @media (scripting: enabled) {
 	#description {
 		#background-proficiencies { display: block; }
-		#picture-drop-area span { display: block; }
-
-		#picture {
-			clip: rect(0 0 0 0);
-			clip-path: inset(50%);
-			height: 1px;
-			overflow: hidden;
-			position: absolute;
-			white-space: nowrap;
-			width: 1px;
-		}
-
-		&:has(#picture:focus) #picture-drop-area { border: solid currentColor medium; }
+		#picture-drop-area input:valid { opacity: 0; }
 	}
 }
