@@ -1,0 +1,104 @@
+#summary {
+	output {
+		font-family: cursive;
+		text-decoration-line: underline;
+		text-decoration-style: solid;
+		text-decoration-thickness: 0.1em;
+		text-underline-offset: 0.2em;
+	}
+
+	#summary-details {
+		align-items: start;
+		display: grid;
+		gap: 1rem;
+		grid-template-areas:
+			'picture name level'
+			'picture player-name proficiency'
+			'picture description description';
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, auto);
+
+		output[name='picture'] {
+			grid-area: picture;
+
+			img {
+				height: auto;
+				object-fit: contain;
+				width: 100%;
+			}
+		}
+
+		div:has(output[name='level']) { grid-area: level; }
+		div:has(output[name='name']) { grid-area: name; }
+		div:has(output[name='playerName']) { grid-area: player-name; }
+		div:has(output[name='proficiency']) { grid-area: proficiency; }
+		details { grid-area: description; }
+
+		details div {
+			columns: 2;
+			gap: 1rem;
+
+			p:first-of-type { margin-block-start: 0; }
+		}
+	}
+
+	#summary-abilities {
+		align-items: start;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+
+		div {
+			flex-basis: 7rem;
+			text-align: center;
+
+			& > * { display: block; }
+		}
+	}
+
+	#summary-skills {
+		columns: 2;
+		gap: 1rem;
+
+		p:first-of-type { margin-block-start: 0; }
+
+		output::before {
+			content: '';
+			display: inline-block;
+			text-align: center;
+			width: 1.5em;
+		}
+
+		output[data-proficient]::before { content: '✔️' / 'Proficient on skill'; }
+	}
+
+	#summary-currency {
+		align-items: start;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	#summary-equipment:has(output[name='equipment']:empty) { display: none; }
+
+	details:has(output:is([name='racialFeatures'], [name='classFeatures']):empty) { display: none; }
+	#summary-features:has(output[name='racialFeatures']:empty):has(output[name='classFeatures']:empty) { display: none; }
+
+	details:has(output:is([name='languageProficiencies'], [name='toolProficiencies'], [name='weaponProficiencies'], [name='armorProficiencies']):empty) { display: none; }
+	#summary-proficiencies:has(output[name='languageProficiencies']:empty):has(output[name='toolsProficiencies']:empty):has(output[name='weaponProficiencies']:empty):has(output[name='armorProficiencies']:empty) {
+		display: none;
+	}
+
+	details:has(output:is([name='spellLvl0'], [name='spellLvl1'], [name='spellLvl2'], [name='spellLvl3'], [name='spellLvl4'], [name='spellLvl5'], [name='spellLvl6'], [name='spellLvl7'], [name='spellLvl8'], [name='spellLvl9']):empty) {
+		display: none;
+	}
+	#summary-spells:has(output[name='spellLvl0']:empty):has(output[name='spellLvl1']:empty):has(output[name='spellLvl2']:empty):has(output[name='spellLvl3']:empty):has(output[name='spellLvl4']:empty):has(output[name='spellLvl5']:empty):has(output[name='spellLvl6']:empty):has(output[name='spellLvl7']:empty):has(output[name='spellLvl8']:empty):has(output[name='spellLvl9']:empty) {
+		display: none;
+	}
+}
+
+@media (max-width: 30rem) { #summary #summary-details { display: block; } }
+
+@media (scripting: enabled) { #export-button { display: initial; } }

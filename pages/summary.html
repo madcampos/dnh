@@ -16,11 +16,106 @@
 						<h2>Summary</h2>
 					</header>
 
-					<fieldset>
+					<fieldset id="summary-details">
+						<legend>Details</legend>
+						<output name="picture" aria-live="off"></output>
+						<div>
+							<label for="summary-name">Name:</label> <output name="name" id="summary-name" aria-live="off"></output>
+						</div>
+						<div>
+							<label for="summary-player-name">Player name:</label> <output name="playerName" id="summary-player-name" aria-live="off"></output>
+						</div>
+						<div>
+							<label for="summary-level">Level:</label> <output name="level" id="summary-level" aria-live="off"></output>
+						</div>
+						<div>
+							<label for="summary-proficiency">Proficiency:</label> <output name="proficiency" id="summary-proficiency" aria-live="off"></output>
+						</div>
+						<details>
+							<summary>Description</summary>
+							<div>
+								<p>
+									<label for="summary-pronouns">Pronouns:</label> <output name="pronouns" id="summary-pronouns" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-age">Age:</label> <output name="age" id="summary-age" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-height">Height:</label> <output name="height" id="summary-height" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-weight">Weight:</label> <output name="weight" id="summary-weight" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-hair">Hair:</label> <output name="hair" id="summary-hair" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-eyes">Eyes:</label> <output name="eyes" id="summary-eyes" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-skin">Skin:</label> <output name="skin" id="summary-skin" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-alignment">Alignment:</label> <output name="alignment" id="summary-alignment" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-deity">Deity:</label> <output name="deity" id="summary-deity" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-traits">Traits:</label> <output name="traits" id="summary-traits" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-ideals">Ideals:</label> <output name="ideals" id="summary-ideals" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-bonds">Bonds:</label> <output name="bonds" id="summary-bonds" aria-live="off"></output>
+								</p>
+								<p>
+									<label for="summary-flaws">Flaws:</label> <output name="flaws" id="summary-flaws" aria-live="off"></output>
+								</p>
+							</div>
+						</details>
+					</fieldset>
+
+					<fieldset id="summary-abilities">
+						<legend>Abilities</legend>
+						<div>
+							<label for="summary-str">Strength</label>
+							<output name="str-mod" aria-live="off" aria-label="Strength modifier"></output>
+							<small><output name="str" id="summary-str" aria-live="off"></output></small>
+						</div>
+						<div>
+							<label for="summary-dex">Dexterity</label>
+							<output name="dex-mod" aria-live="off" aria-label="Dexterity modifier"></output>
+							<small><output name="dex" id="summary-dex" aria-live="off"></output></small>
+						</div>
+						<div>
+							<label for="summary-con">Constitution</label>
+							<output name="con-mod" aria-live="off" aria-label="Constitution modifier"></output>
+							<small><output name="con" id="summary-con" aria-live="off"></output></small>
+						</div>
+						<div>
+							<label for="summary-int">Inteligence</label>
+							<output name="int-mod" aria-live="off" aria-label="Inteligence modifier"></output>
+							<output name="int" id="summary-int" aria-live="off"></output>
+						</div>
+						<div>
+							<label for="summary-wis">Wisdom</label>
+							<output name="wis-mod" aria-live="off" aria-label="Wisdom modifier"></output>
+							<small><output name="wis" id="summary-wis" aria-live="off"></output></small>
+						</div>
+						<div>
+							<label for="summary-cha">Charisma</label>
+							<output name="cha-mod" aria-live="off" aria-label="Charisma modifier"></output>
+							<small><output name="cha" id="summary-cha" aria-live="off"></output></small>
+						</div>
+					</fieldset>
+
+					<fieldset id="summary-skills">
 						<legend>Skills</legend>
 						<p>
 							<output
-								name="skill-acrobatics"
+								name="acrobatics"
 								id="skill-acrobatics"
 								for="dex"
 								aria-live="off"
@@ -31,7 +126,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-animal-handling"
+								name="animal-handling"
 								id="skill-animal-handling"
 								for="wis"
 								aria-live="off"
@@ -42,7 +137,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-arcana"
+								name="arcana"
 								id="skill-arcana"
 								for="int"
 								aria-live="off"
@@ -53,7 +148,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-athletics"
+								name="athletics"
 								id="skill-athletics"
 								for="str"
 								aria-live="off"
@@ -64,7 +159,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-deception"
+								name="deception"
 								id="skill-deception"
 								for="cha"
 								aria-live="off"
@@ -75,7 +170,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-history"
+								name="history"
 								id="skill-history"
 								for="int"
 								aria-live="off"
@@ -86,7 +181,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-insight"
+								name="insight"
 								id="skill-insight"
 								for="wis"
 								aria-live="off"
@@ -97,7 +192,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-intimidation"
+								name="intimidation"
 								id="skill-intimidation"
 								for="cha"
 								aria-live="off"
@@ -108,7 +203,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-investigation"
+								name="investigation"
 								id="skill-investigation"
 								for="int"
 								aria-live="off"
@@ -119,7 +214,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-medicine"
+								name="medicine"
 								id="skill-medicine"
 								for="wis"
 								aria-live="off"
@@ -130,7 +225,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-nature"
+								name="nature"
 								id="skill-nature"
 								for="int"
 								aria-live="off"
@@ -141,7 +236,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-perception"
+								name="perception"
 								id="skill-perception"
 								for="wis"
 								aria-live="off"
@@ -152,7 +247,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-performance"
+								name="performance"
 								id="skill-performance"
 								for="cha"
 								aria-live="off"
@@ -163,7 +258,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-persuasion"
+								name="persuasion"
 								id="skill-persuasion"
 								for="cha"
 								aria-live="off"
@@ -174,7 +269,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-religion"
+								name="religion"
 								id="skill-religion"
 								for="int"
 								aria-live="off"
@@ -185,7 +280,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-slight-of-hand"
+								name="slight-of-hand"
 								id="skill-slight-of-hand"
 								for="dex"
 								aria-live="off"
@@ -196,7 +291,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-stealth"
+								name="stealth"
 								id="skill-stealth"
 								for="dex"
 								aria-live="off"
@@ -207,7 +302,7 @@
 						</p>
 						<p>
 							<output
-								name="skill-survival"
+								name="survival"
 								id="skill-survival"
 								for="wis"
 								aria-live="off"
@@ -217,15 +312,105 @@
 							<abbr title="Wisdom" aria-label="Base attribute">(Wis)</abbr>
 						</p>
 					</fieldset>
-					<!-- TODO: output everything -->
-					<!-- TODO: add used hit dice, current hp, and temp hp as range sliders -->
-					<!-- TODO: add death saves -->
-					<!-- TODO: add saving throws, AC, initiative, speed, passive perception, inspiration, proficiency bonus -->
-					<!-- TODO: add spell dc, ability, attack bonus, spell slots (as range slider) -->
+					<fieldset id="summary-currency">
+						<legend>Currency</legend>
+						<p>
+							<label for="summary-pp">PP:</label> <output name="pp" id="summary-pp" aria-live="off"></output>
+						</p>
+						<p>
+							<label for="summary-gp">GP:</label> <output name="gp" id="summary-gp" aria-live="off"></output>
+						</p>
+						<p>
+							<label for="summary-ep">EP:</label> <output name="ep" id="summary-ep" aria-live="off"></output>
+						</p>
+						<p>
+							<label for="summary-sp">SP:</label> <output name="sp" id="summary-sp" aria-live="off"></output>
+						</p>
+						<p>
+							<label for="summary-cp">CP:</label> <output name="cp" id="summary-cp" aria-live="off"></output>
+						</p>
+					</fieldset>
+					<fieldset id="summary-equipment">
+						<legend>Equipment</legend>
+						<output name="equipment" aria-live="off" aria-label="Equipment list"></output>
+					</fieldset>
+					<fieldset id="summary-features">
+						<legend>Features</legend>
+						<details>
+							<summary>Racial features</summary>
+							<output name="racialFeatures" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>Class features</summary>
+							<output name="classFeatures" aria-live="off"></output>
+						</details>
+					</fieldset>
+					<fieldset id="summary-proficiencies">
+						<legend>Proficiencies</legend>
+						<details>
+							<summary>Languages</summary>
+							<output name="languageProficiencies" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>Tools</summary>
+							<output name="toolProficiencies" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>Weapons</summary>
+							<output name="weaponProficiencies" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>Armor</summary>
+							<output name="armorProficiencies" aria-live="off"></output>
+						</details>
+					</fieldset>
+					<fieldset id="summary-spells">
+						<legend>Spells</legend>
+						<details>
+							<summary>Cantrips</summary>
+							<output name="spellLvl0" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>1st Level</summary>
+							<output name="spellLvl1" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>2nd Level</summary>
+							<output name="spellLvl2" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>3rd Level</summary>
+							<output name="spellLvl3" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>4th Level</summary>
+							<output name="spellLvl4" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>5th Level</summary>
+							<output name="spellLvl5" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>6th Level</summary>
+							<output name="spellLvl6" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>7th Level</summary>
+							<output name="spellLvl7" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>8th Level</summary>
+							<output name="spellLvl8" aria-live="off"></output>
+						</details>
+						<details>
+							<summary>9th Level</summary>
+							<output name="spellLvl9" aria-live="off"></output>
+						</details>
+					</fieldset>
 					<footer>
 						<nav aria-label="Summary Actions">
 							<button type="submit" class="prev-button" formaction="./06-spells.html" data-target="spells">Previous</button>
-							<button type="submit" class="next-button" data-target="export">Export character</button>
+							<button type="button" id="export-button" hidden>Export character</button>
 						</nav>
 					</footer>
 				</article>
