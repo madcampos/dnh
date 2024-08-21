@@ -10,7 +10,12 @@ export function getCurrentStep() {
 }
 
 export async function loadForms() {
+	document.querySelectorAll('dialog').forEach((dialog) => {
+		dialog.remove();
+	});
+
 	(await Promise.all([
+		'01-race.html',
 		'02-class.html',
 		'03-abilities.html',
 		'04-description.html',
