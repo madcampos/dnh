@@ -87,6 +87,27 @@ function loadFeature(output, value) {
 	const list = output.querySelector('dl') ?? document.createElement('dl');
 	const title = document.createElement('dt');
 	const content = document.createElement('dd');
+	const { name, description, level } = JSON.parse(value);
+
+	title.innerHTML = name;
+	content.innerHTML = description;
+
+	if (level) {
+		title.dataset['level'] = level;
+	}
+
+	list.append(title, content);
+	output.replaceChildren(list);
+}
+
+/**
+ * @param {HTMLOutputElement} output
+ * @param {string} value
+ */
+function loadGear(output, value) {
+	const list = output.querySelector('dl') ?? document.createElement('dl');
+	const title = document.createElement('dt');
+	const content = document.createElement('dd');
 	const { name, description } = JSON.parse(value);
 
 	title.innerHTML = name;
@@ -115,7 +136,7 @@ function loadSummary() {
 	const modifiers = /** @type {Record<string, number>} */ ({});
 
 	document.querySelectorAll(
-		'output:is([name="languageProficiencies"], [name="toolProficiencies"], [name="weaponProficiencies"], [name="armorProficiencies"], [name="racialFeatures"], [name="classFeatures"])'
+		'output:is([name="languageProficiencies"], [name="toolProficiencies"], [name="weaponProficiencies"], [name="armorProficiencies"], [name="racialFeatures"], [name="classFeatures"], [name="equipment"], [name="weapon"], [name="armor"])'
 	).forEach((output) => {
 		output.replaceChildren('');
 	});
@@ -136,6 +157,11 @@ function loadSummary() {
 
 			if (['racialFeatures', 'classFeatures'].includes(key)) {
 				loadFeature(output, /** @type {string} */ (value));
+				return;
+			}
+
+			if (['equipment', 'armor', 'weapon'].includes(key)) {
+				loadGear(output, /** @type {string} */ (value));
 				return;
 			}
 

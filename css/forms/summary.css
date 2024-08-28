@@ -81,6 +81,17 @@
 		justify-content: center;
 	}
 
+	#summary-features dt[data-level]::after {
+		background-color: canvastext;
+		border-radius: 100vmax;
+		color: canvas;
+		content: 'Level ' attr(data-level);
+		display: inline-block;
+		margin-inline-start: 1rem;
+		padding: 0.1rem 0.5rem;
+		vertical-align: middle;
+	}
+
 	#summary-equipment:has(output[name='equipment']:empty) { display: none; }
 
 	details:has(output:is([name='racialFeatures'], [name='classFeatures']):empty) { display: none; }
