@@ -137,7 +137,7 @@
  * @prop {number} sp
  * @prop {number} cp
  *
- * @prop {Weapon[]} weapons
+ * @prop {Weapon[]} weapon
  * @prop {Armor[]} armor
  * @prop {Equipment[]} equipment
  *
