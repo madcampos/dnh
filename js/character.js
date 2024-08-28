@@ -10,6 +10,9 @@
  * @typedef {Object} Weapon
  *
  * @prop {string} name
+ * @prop {string} type
+ * @prop {number} weight
+ * @prop {number} value
  * @prop {string} damage
  * @prop {string} description
  */
@@ -18,6 +21,9 @@
  * @typedef {Object} Armor
  *
  * @prop {string} name
+ * @prop {string} type
+ * @prop {number} weight
+ * @prop {number} value
  * @prop {string} ac
  * @prop {string} description
  */
@@ -26,6 +32,9 @@
  * @typedef {Object} Equipment
  *
  * @prop {string} name
+ * @prop {string} type
+ * @prop {number} weight
+ * @prop {number} value
  * @prop {string} description
  */
 

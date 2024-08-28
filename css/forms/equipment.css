@@ -11,9 +11,53 @@
 		small, label { display: block; }
 	}
 
-	textarea {
-		min-height: 10rem;
-		resize: vertical;
-		width: 100%;
+	ul {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin: 0;
+		margin-block-start: -2rem;
+		padding: 0;
+
+		&:has(input:checked) { margin-block-start: 0; }
+
+		li {
+			align-items: center;
+			display: flex;
+			gap: 0.5rem;
+			justify-content: start;
+			list-style: none;
+			order: 2;
+
+			&:has(input:checked) {
+				font-weight: bold;
+				order: 1;
+			}
+
+			&:nth-child(1 of :not(:has(input:checked))) { margin-block-start: 2rem; }
+
+			button { padding: 0.1rem 0.6rem; }
+		}
+	}
+
+	aside {
+		border: solid currentColor medium;
+		border-radius: 1rem;
+		max-height: 80vh;
+		max-width: 80vw;
+		overflow: auto;
+		overscroll-behavior: contain;
+		padding: 1rem;
+
+		header {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		&::backdrop {
+			backdrop-filter: blur(0.5rem);
+			background-color: color-mix(in srgb, canvas, transparent 20%);
+		}
 	}
 }

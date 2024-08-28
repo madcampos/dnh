@@ -80,12 +80,17 @@ export function updateValue(element) {
 		return;
 	}
 
-	if (element instanceof HTMLInputElement && (element.type === 'radio' || element.type === 'checkbox')) {
+	if (element instanceof HTMLInputElement && element.type === 'radio') {
 		document.querySelectorAll(`input[name="${element.name}"]`).forEach((curEl) => {
 			localStorage.setItem(`#${curEl.id}`, 'false');
 		});
 
 		localStorage.setItem(`#${element.id}`, element.checked ? 'true' : 'false');
+	} else if (element instanceof HTMLInputElement && element.type === 'checkbox') {
+		// @ts-expect-error
+		document.querySelectorAll(`input[name="${element.name}"]`).forEach((/** @type {HTMLInputElement} */ curEl) => {
+			localStorage.setItem(`#${curEl.id}`, curEl.checked ? 'true' : 'false');
+		});
 	} else {
 		localStorage.setItem(`#${element.id}`, element.value);
 	}
