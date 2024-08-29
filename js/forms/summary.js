@@ -131,12 +131,97 @@ function loadProficiency(output, value) {
 	output.replaceChildren(list);
 }
 
+/**
+ * @param {import('../character.js').SpellComponents} components
+ * @param {string} name
+ */
+function generateSpellComponents({ hasSomatic, hasVerbal, material }, name) {
+	let componentsString = '';
+
+	if (hasVerbal) {
+		componentsString += '<abbr class="spell-component" data-component="verbal" title="Verbal">V</abbr>';
+	}
+
+	if (hasSomatic) {
+		componentsString += '<abbr class="spell-component" data-component="somatic" title="Somatic">S</abbr>';
+	}
+
+	if (material) {
+		componentsString +=
+			`<button type="button" popovertarget="spell-component-material-${name}"><abbr class="spell-component" data-component="material" title="Material">M</abbr></button>`;
+		componentsString += `<article popover id="spell-component-material-${name}" class="spell-component-popover">${material}</article>`;
+	}
+
+	return componentsString;
+}
+
+/**
+ * @param {HTMLOutputElement} output
+ * @param {string} value
+ */
+function loadSpellList(output, value) {
+	const list = output.querySelector('dl') ?? document.createElement('dl');
+	const title = document.createElement('dt');
+	const content = document.createElement('dd');
+	const section = document.createElement('section');
+	const details = document.createElement('details');
+
+	const { name, description, castingTime, components, duration, hasConcentration, level, range, school } = /** @type {import('../character.js').Spell} */ (JSON.parse(value));
+
+	title.innerHTML = name;
+
+	details.insertAdjacentHTML('afterbegin', `<summary>Spell description<span class="visually-hidden"> for "${name}"</span></summary>`);
+	details.insertAdjacentHTML('beforeend', description);
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-level"><label for="spell-level-${name}">Spell Level: </label><output id="spell-level-${name}" aria-live="off">${
+			level === 0 ? 'Cantrip' : level
+		}</output></span>`
+	);
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-components"><label for="spell-component-${name}">Components: </label><output id="spell-component-${name}" aria-live="off">${
+			generateSpellComponents(components, name)
+		}</output></span>`
+	);
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-range"><label for="spell-range-${name}">Range: </label><output id="spell-range-${name}" aria-live="off">${range}</output></span>`
+	);
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-duration"><label for="spell-duration-${name}">Duration: </label><output id="spell-duration-${name}" aria-live="off">${duration}</output></span>`
+	);
+
+	if (hasConcentration) {
+		section.insertAdjacentHTML('beforeend', `<span class="spell-concentration">Requires Concentration</span>`);
+	}
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-casting-time"><label for="spell-casting-time-${name}">Casting time: </label><output id="spell-casting-time-${name}" aria-live="off">${castingTime}</output></span>`
+	);
+
+	section.insertAdjacentHTML(
+		'beforeend',
+		`<span class="spell-magic-school"><label for="spell-magic-school-${name}">Magic school: </label><output id="spell-magic-school-${name}" aria-live="off">${school}</output></span>`
+	);
+
+	content.append(section, details);
+	list.append(title, content);
+	output.replaceChildren(list);
+}
+
 function loadSummary() {
 	const formData = getAllForms();
 	const modifiers = /** @type {Record<string, number>} */ ({});
 
 	document.querySelectorAll(
-		'output:is([name="languageProficiencies"], [name="toolProficiencies"], [name="weaponProficiencies"], [name="armorProficiencies"], [name="racialFeatures"], [name="classFeatures"], [name="equipment"], [name="weapon"], [name="armor"])'
+		'output:is([name="languageProficiencies"], [name="toolProficiencies"], [name="weaponProficiencies"], [name="armorProficiencies"], [name="racialFeatures"], [name="classFeatures"], [name="equipment"], [name="weapon"], [name="armor"], [name="spellList"])'
 	).forEach((output) => {
 		output.replaceChildren('');
 	});
@@ -147,6 +232,11 @@ function loadSummary() {
 		if (output) {
 			if (key === 'picture') {
 				displayPicture(getPicture());
+				return;
+			}
+
+			if (key === 'spellList') {
+				loadSpellList(output, /** @type {string} */ (value));
 				return;
 			}
 

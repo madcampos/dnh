@@ -105,8 +105,45 @@
 	details:has(output:is([name='spellLvl0'], [name='spellLvl1'], [name='spellLvl2'], [name='spellLvl3'], [name='spellLvl4'], [name='spellLvl5'], [name='spellLvl6'], [name='spellLvl7'], [name='spellLvl8'], [name='spellLvl9']):empty) {
 		display: none;
 	}
-	#summary-spells:has(output[name='spellLvl0']:empty):has(output[name='spellLvl1']:empty):has(output[name='spellLvl2']:empty):has(output[name='spellLvl3']:empty):has(output[name='spellLvl4']:empty):has(output[name='spellLvl5']:empty):has(output[name='spellLvl6']:empty):has(output[name='spellLvl7']:empty):has(output[name='spellLvl8']:empty):has(output[name='spellLvl9']:empty) {
-		display: none;
+
+	#summary-spells {
+		&:has(output[name='spellList']:empty) { display: none; }
+
+		section {
+			display: grid;
+			grid-auto-flow: column;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, auto);
+
+			& > * { display: block; }
+
+			label { font-weight: bold; }
+		}
+
+		.spell-components output {
+			align-items: center;
+			display: inline-flex;
+			gap: 0.5rem;
+		}
+
+		article {
+			background-color: canvas;
+			border: solid currentColor medium;
+			border-radius: 1rem;
+			color: inherit;
+			max-height: 80vmin;
+			max-width: 80vw;
+			min-height: 50vmin;
+			min-width: 50vw;
+			overflow: auto;
+			overscroll-behavior: contain;
+			padding: 1rem;
+
+			&::backdrop {
+				backdrop-filter: blur(0.5rem);
+				background-color: color-mix(in srgb, canvas, transparent 20%);
+			}
+		}
 	}
 }
 
