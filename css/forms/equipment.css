@@ -44,8 +44,10 @@
 	aside {
 		border: solid currentColor medium;
 		border-radius: 1rem;
-		max-height: 80vh;
+		max-height: 80vmin;
 		max-width: 80vw;
+		min-height: 50vmin;
+		min-width: 50vw;
 		overflow: auto;
 		overscroll-behavior: contain;
 		padding: 1rem;
