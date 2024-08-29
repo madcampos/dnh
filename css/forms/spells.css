@@ -1,22 +1,70 @@
 #spells {
 	fieldset { margin: 0; }
 
-	textarea {
-		min-height: 10rem;
-		resize: vertical;
-		width: 100%;
-	}
-
 	#spells-list {
 		display: grid;
 		gap: 1rem;
 		grid-auto-flow: row;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(5, auto);
+
+		section {
+			display: grid;
+			grid-auto-flow: column;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, auto);
+
+			& > * { display: block; }
+
+			label { font-weight: bold; }
+		}
+
+		.spell-components output {
+			align-items: center;
+			display: inline-flex;
+			gap: 0.5rem;
+		}
+
+		article {
+			border: solid currentColor medium;
+			border-radius: 1rem;
+			max-height: 80vmin;
+			max-width: 80vw;
+			min-height: 50vmin;
+			min-width: 50vw;
+			overflow: auto;
+			overscroll-behavior: contain;
+			padding: 1rem;
+
+			&::backdrop {
+				backdrop-filter: blur(0.5rem);
+				background-color: color-mix(in srgb, canvas, transparent 20%);
+			}
+		}
+
+		&[data-class='bard'] :is(dt, dd):not([data-classes~='bard']) { display: none; }
+		&[data-class='cleric'] :is(dt, dd):not([data-classes~='cleric']) { display: none; }
+		&[data-class='druid'] :is(dt, dd):not([data-classes~='druid']) { display: none; }
+		&[data-class='monk'] :is(dt, dd):not([data-classes~='monk']) { display: none; }
+		&[data-class='paladin'] :is(dt, dd):not([data-classes~='paladin']) { display: none; }
+		&[data-class='ranger'] :is(dt, dd):not([data-classes~='ranger']) { display: none; }
+		&[data-class='sorcerer'] :is(dt, dd):not([data-classes~='sorcerer']) { display: none; }
+		&[data-class='warlock'] :is(dt, dd):not([data-classes~='warlock']) { display: none; }
+		&[data-class='wizard'] :is(dt, dd):not([data-classes~='wizard']) { display: none; }
+
+		&[data-class='bard'] fieldset:not(:has([data-classes~='bard'])) { display: none; }
+		&[data-class='cleric'] fieldset:not(:has([data-classes~='cleric'])) { display: none; }
+		&[data-class='druid'] fieldset:not(:has([data-classes~='druid'])) { display: none; }
+		&[data-class='monk'] fieldset:not(:has([data-classes~='monk'])) { display: none; }
+		&[data-class='paladin'] fieldset:not(:has([data-classes~='paladin'])) { display: none; }
+		&[data-class='ranger'] fieldset:not(:has([data-classes~='ranger'])) { display: none; }
+		&[data-class='sorcerer'] fieldset:not(:has([data-classes~='sorcerer'])) { display: none; }
+		&[data-class='warlock'] fieldset:not(:has([data-classes~='warlock'])) { display: none; }
+		&[data-class='wizard'] fieldset:not(:has([data-classes~='wizard'])) { display: none; }
 	}
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 70rem) {
 	#spells #spells-list {
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(10, auto);

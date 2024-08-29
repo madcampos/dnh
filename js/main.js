@@ -4,6 +4,7 @@ import { abilitiesFormHandling } from './forms/abilities.js';
 import { classFormHandling } from './forms/class.js';
 import { descriptionFormHandling } from './forms/description.js';
 import { raceFormHandling } from './forms/race.js';
+import { spellsFormHandling } from './forms/spells.js';
 import { summaryFormHandling } from './forms/summary.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -52,5 +53,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 	classFormHandling();
 	abilitiesFormHandling();
 	descriptionFormHandling();
+	spellsFormHandling();
 	summaryFormHandling();
 });

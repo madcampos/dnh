@@ -62,6 +62,14 @@
  */
 
 /**
+ * @typedef {Object} SpellComponents
+ *
+ * @prop {boolean} hasVerbal
+ * @prop {boolean} hasSomatic
+ * @prop {string} [material]
+ */
+
+/**
  * @typedef {Object} Spell
  *
  * @prop {string} name
@@ -69,7 +77,9 @@
  * @prop {string} school
  * @prop {boolean} hasConcentration
  * @prop {string} range
- * @prop {string} time
+ * @prop {string} duration
+ * @prop {SpellComponents} components
+ * @prop {string} castingTime
  * @prop {string} description
  */
 
