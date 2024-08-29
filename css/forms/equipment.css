@@ -42,8 +42,10 @@
 	}
 
 	aside {
+		background-color: canvas;
 		border: solid currentColor medium;
 		border-radius: 1rem;
+		color: inherit;
 		max-height: 80vmin;
 		max-width: 80vw;
 		min-height: 50vmin;

@@ -1,11 +1,11 @@
 #summary {
-	output {
+	output, output button {
+		color: light-dark(highlight, mark);
 		font-family: cursive;
-		text-decoration-line: underline;
-		text-decoration-style: solid;
-		text-decoration-thickness: 0.1em;
-		text-underline-offset: 0.2em;
 	}
+
+	output button:focus { color: canvas; }
+	output button:active { color: marktext; }
 
 	#summary-details {
 		align-items: start;
@@ -93,6 +93,8 @@
 	}
 
 	#summary-equipment:has(output[name='equipment']:empty) { display: none; }
+	#summary-armor:has(output[name='armor']:empty) { display: none; }
+	#summary-weapons:has(output[name='weapons']:empty) { display: none; }
 
 	details:has(output:is([name='racialFeatures'], [name='classFeatures']):empty) { display: none; }
 	#summary-features:has(output[name='racialFeatures']:empty):has(output[name='classFeatures']:empty) { display: none; }

@@ -71,26 +71,26 @@ summary:focus {
 
 /* dprint-ignore */
 details:has( :not(:focus):invalid) summary {
-	color: goldenrod;
+	color: light-dark(highlight, mark);
 	font-weight: bold;
 
 	&::after { content: ' (Needs attention ⚠️)'; }
 }
 
 label:has(~ :is(input, select):invalid:not(:focus):not(:user-invalid)) {
-	color: goldenrod;
+	color: light-dark(highlight, mark);
 	font-weight: bold;
 
 	&::before { content: '⚠️ '; }
 }
 
 :is(input, select):invalid:not(:focus):not(:user-invalid) {
-	color: goldenrod;
+	color: light-dark(highlight, mark);
 	font-weight: bold;
 }
 
 :is(input, select):invalid ~ .error-message {
-	color: goldenrod;
+	color: light-dark(highlight, mark);
 	display: block;
 }
 

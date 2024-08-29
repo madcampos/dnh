@@ -26,8 +26,10 @@
 		}
 
 		article {
+			background-color: canvas;
 			border: solid currentColor medium;
 			border-radius: 1rem;
+			color: inherit;
 			max-height: 80vmin;
 			max-width: 80vw;
 			min-height: 50vmin;
@@ -40,6 +42,12 @@
 				backdrop-filter: blur(0.5rem);
 				background-color: color-mix(in srgb, canvas, transparent 20%);
 			}
+		}
+
+		input:checked ~ label {
+			font-weight: bold;
+
+			&::after { content: '✔️' / ''; }
 		}
 
 		&[data-class='bard'] :is(dt, dd):not([data-classes~='bard']) { display: none; }
